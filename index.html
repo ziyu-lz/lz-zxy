@@ -279,7 +279,7 @@
   let wDepth = 0;              // 水面到屏幕底部的像素深度
   let squash = 0.4;            // 倒影的透视压缩系数
   let bgGrad = null;
-  let nebula = null;
+  let nebula = null, nebulaSpin = null;
   let wGrad = null;            // 水体渐变
   let wLineGrad = null;        // 水线亮边渐变
 
@@ -585,6 +585,7 @@
     wLineGrad.addColorStop(1.00, 'rgba(120,165,255,0)');
 
     nebula = buildNebula();
+    nebulaSpin = buildNebulaSpin();
     buildStars();
     buildDust();
     buildGlints();
@@ -598,7 +599,10 @@
     st.setProperty('--names-top', (cy - scale).toFixed(1) + 'px');
   }
 
-  /* 星云：离屏低分辨率绘制，主循环里放大贴回，省下大量渐变开销 */
+  /* 星云：离屏低分辨率绘制，主循环里放大贴回，省下大量渐变开销。
+     参考图的星空有三层：上方是冷紫/靛蓝的稀薄星云，下方靠近地平线是
+     两团偏亮的云，正中还有一片被水线照亮的薄雾；三层叠出纵深感。
+     另外叠加星云纤维卷须与旋涡环带，营造「神秘莫测」的弥漫感。 */
   function buildNebula() {
     const nw = Math.max(2, Math.round(W / 3));
     const nh = Math.max(2, Math.round(H / 3));
@@ -608,33 +612,72 @@
     const g = c.getContext('2d');
     g.globalCompositeOperation = 'lighter';
 
-    /* 参考图的星空有三层：上方是冷紫/靛蓝的稀薄星云，下方靠近地平线是
-       两团偏亮的云，正中还有一片被水线照亮的薄雾。三层叠出纵深感。 */
-    const blobs = [
-      // 高空的稀薄星云
-      { x: 0.20, y: 0.24, r: 0.58, h: 268, a: 0.16 },
-      { x: 0.80, y: 0.20, r: 0.50, h: 214, a: 0.15 },
-      { x: 0.56, y: 0.36, r: 0.46, h: 286, a: 0.10 },
-      { x: 0.50, y: 0.12, r: 0.40, h: 330, a: 0.09 },
-      // 地平线云团（左 / 右）
-      { x: 0.13, y: 0.68, r: 0.34, h: 210, a: 0.20 },
-      { x: 0.29, y: 0.73, r: 0.22, h: 196, a: 0.17 },
-      { x: 0.88, y: 0.67, r: 0.33, h: 206, a: 0.19 },
-      { x: 0.71, y: 0.74, r: 0.21, h: 222, a: 0.14 },
-      // 正下方被水面照亮的薄雾
-      { x: 0.50, y: 0.76, r: 0.62, h: 202, a: 0.11 },
-      { x: 0.36, y: 0.86, r: 0.30, h: 268, a: 0.11 },
-      { x: 0.66, y: 0.88, r: 0.28, h: 208, a: 0.10 }
-    ];
-
-    for (const b of blobs) {
-      const x = b.x * nw, y = b.y * nh, r = b.r * Math.max(nw, nh);
-      const grad = g.createRadialGradient(x, y, 0, x, y, r);
-      grad.addColorStop(0.00, 'hsla(' + b.h + ',88%,64%,' + b.a + ')');
-      grad.addColorStop(0.42, 'hsla(' + b.h + ',84%,52%,' + (b.a * 0.34) + ')');
-      grad.addColorStop(1.00, 'hsla(' + b.h + ',80%,42%,0)');
+    const blob = (x, y, r, h, a) => {
+      const px = x * nw, py = y * nh, pr = r * Math.max(nw, nh);
+      const grad = g.createRadialGradient(px, py, 0, px, py, pr);
+      grad.addColorStop(0.00, 'hsla(' + h + ',88%,64%,' + a + ')');
+      grad.addColorStop(0.42, 'hsla(' + h + ',84%,52%,' + (a * 0.34) + ')');
+      grad.addColorStop(1.00, 'hsla(' + h + ',80%,42%,0)');
       g.fillStyle = grad;
-      g.fillRect(x - r, y - r, r * 2, r * 2);
+      g.fillRect(px - pr, py - pr, pr * 2, pr * 2);
+    };
+
+    const blobs = [
+      // 高空的稀薄星云（冷紫 / 靛蓝）
+      { x: 0.20, y: 0.24, r: 0.58, h: 268, a: 0.26 },
+      { x: 0.80, y: 0.20, r: 0.50, h: 214, a: 0.24 },
+      { x: 0.56, y: 0.36, r: 0.46, h: 286, a: 0.17 },
+      { x: 0.50, y: 0.12, r: 0.40, h: 330, a: 0.15 },
+      { x: 0.12, y: 0.42, r: 0.34, h: 250, a: 0.14 },
+      { x: 0.90, y: 0.45, r: 0.30, h: 232, a: 0.13 },
+      { x: 0.36, y: 0.08, r: 0.30, h: 300, a: 0.10 },
+      // 地平线云团（左 / 右，被星光点亮）
+      { x: 0.13, y: 0.68, r: 0.34, h: 210, a: 0.30 },
+      { x: 0.29, y: 0.73, r: 0.22, h: 196, a: 0.26 },
+      { x: 0.88, y: 0.67, r: 0.33, h: 206, a: 0.28 },
+      { x: 0.71, y: 0.74, r: 0.21, h: 222, a: 0.22 },
+      // 正下方被水面照亮的薄雾
+      { x: 0.50, y: 0.76, r: 0.62, h: 202, a: 0.18 },
+      { x: 0.36, y: 0.86, r: 0.30, h: 268, a: 0.17 },
+      { x: 0.66, y: 0.88, r: 0.28, h: 208, a: 0.15 }
+    ];
+    for (const b of blobs) blob(b.x, b.y, b.r, b.h, b.a);
+
+    /* 星云纤维：几道细长的半透明卷须，模拟星云的丝状结构。
+       沿一条被正弦扰动的中轴走，越往外越细越淡。 */
+    const fiber = (x0, y0, x1, y1, amp, wl, h, a) => {
+      const S = Math.max(nw, nh);
+      const xa = x0 * nw, ya = y0 * nh, xb = x1 * nw, yb = y1 * nh;
+      g.lineCap = 'round';
+      g.beginPath();
+      g.moveTo(xa, ya);
+      for (let i = 1; i <= 24; i++) {
+        const t = i / 24;
+        const x = xa + (xb - xa) * t;
+        const y = ya + (yb - ya) * t +
+                  Math.sin(t * wl + xa * 0.01) * amp * S * (1 - Math.abs(t - 0.5) * 1.4);
+        g.lineTo(x, y);
+      }
+      g.strokeStyle = 'hsla(' + h + ',90%,66%,' + a + ')';
+      g.lineWidth = S * 0.020;
+      g.stroke();
+      g.strokeStyle = 'hsla(' + h + ',88%,78%,' + (a * 0.5) + ')';
+      g.lineWidth = S * 0.007;
+      g.stroke();
+    };
+    fiber(0.05, 0.30, 0.42, 0.10, 0.05, 7, 244, 0.10);
+    fiber(0.60, 0.06, 0.98, 0.34, 0.04, 9, 262, 0.09);
+    fiber(0.72, 0.50, 0.40, 0.34, 0.03, 8, 222, 0.08);
+    fiber(0.08, 0.52, 0.34, 0.30, 0.045, 6, 288, 0.08);
+
+    /* 旋涡环带：斜穿过画面的细椭圆环，像远处星系的气体旋臂 */
+    g.strokeStyle = 'hsla(232,86%,60%,0.055)';
+    g.lineWidth = Math.max(0.5, Math.max(nw, nh) * 0.012);
+    for (let i = 0; i < 2; i++) {
+      g.beginPath();
+      g.ellipse(nw * 0.5, nh * 0.40, nw * (0.30 + i * 0.13), nh * (0.13 + i * 0.06),
+                -0.5 + i * 0.3, 0, TAU);
+      g.stroke();
     }
 
     /* 地平线上的积云：参考图里左、右各有一团被星光照亮的云。
@@ -653,9 +696,54 @@
         g.fillRect(x - r, y - r, r * 2, r * 2);
       }
     };
-    cloud(0.15, 0.685, 0.30, 13, 208, 0.15);
-    cloud(0.86, 0.680, 0.28, 12, 206, 0.14);
-    cloud(0.68, 0.712, 0.20, 8, 222, 0.10);
+    cloud(0.15, 0.685, 0.30, 13, 208, 0.22);
+    cloud(0.86, 0.680, 0.28, 12, 206, 0.20);
+    cloud(0.68, 0.712, 0.20, 8, 222, 0.15);
+
+    return c;
+  }
+
+  /* 第二层星云：一个缓慢旋转的「旋涡」结构，叠在主星云之上，
+     让整片夜空有一种不可捉摸的缓慢流动感。 */
+  function buildNebulaSpin() {
+    const nw = Math.max(2, Math.round(W / 3));
+    const nh = Math.max(2, Math.round(H / 3));
+    const c = document.createElement('canvas');
+    c.width = nw;
+    c.height = nh;
+    const g = c.getContext('2d');
+    g.globalCompositeOperation = 'lighter';
+    const S = Math.max(nw, nh);
+    const cx = nw * 0.50, cy = nh * 0.42;
+
+    /* 三条对数螺旋旋臂：r = r0 · e^(b·θ)，每臂一串光斑，越往外越淡 */
+    const ARM = 3, TURNS = 2.4;
+    for (let arm = 0; arm < ARM; arm++) {
+      const hue = [252, 228, 276][arm];
+      const p0 = (arm / ARM) * TAU;
+      for (let t = 0; t < TURNS; t += 0.05) {
+        const th = p0 + t * TAU;
+        const rr = S * (0.035 + 0.30 * Math.pow(t / TURNS, 0.85));
+        const x = cx + rr * Math.cos(th);
+        const y = cy + rr * Math.sin(th) * 0.72;
+        const a = 0.10 * (1 - t / TURNS) * (0.7 + 0.3 * Math.sin(t * 3 + arm));
+        const r = S * (0.012 + 0.05 * Math.pow(t / TURNS, 0.7));
+        const grad = g.createRadialGradient(x, y, 0, x, y, r);
+        grad.addColorStop(0.00, 'hsla(' + hue + ',90%,66%,' + a + ')');
+        grad.addColorStop(0.55, 'hsla(' + hue + ',86%,52%,' + (a * 0.35) + ')');
+        grad.addColorStop(1.00, 'hsla(' + hue + ',80%,40%,0)');
+        g.fillStyle = grad;
+        g.fillRect(x - r, y - r, r * 2, r * 2);
+      }
+    }
+
+    /* 旋涡中心的一团亮核 */
+    const core = g.createRadialGradient(cx, cy, 0, cx, cy, S * 0.16);
+    core.addColorStop(0.00, 'hsla(258,92%,70%,0.20)');
+    core.addColorStop(0.50, 'hsla(236,88%,56%,0.08)');
+    core.addColorStop(1.00, 'hsla(220,84%,46%,0)');
+    g.fillStyle = core;
+    g.fillRect(cx - S * 0.16, cy - S * 0.16, S * 0.32, S * 0.32);
 
     return c;
   }
@@ -802,23 +890,23 @@
         u: i / n + rand(-0.006, 0.006),
         dir,
         sp: dir * rand(0.070, 0.265),                    // 每秒推进的弧长比例
-        tail: rand(0.096, 0.264),                        // 拖尾长度（弧长比例，三倍）
+        tail: rand(0.29, 0.79),                          // 拖尾长度（弧长比例，普通版的三倍）
         len: rand(0.70, 1.10),                           // 视觉长度倍率
         tubeR: rand(0.45, 0.85),                         // 在管子的哪一层
         theta0: Math.random() * TAU,                     // 绕管初始相位
-        rotSpeed: rand(0.20, 0.75) * (Math.random() < 0.5 ? 1 : -1),  // 绕管滚动速度
-        /* 拖尾这么长，绕管圈数必须小：半圈上下刚好「绕出来再收回去」，
-           给到一圈以上，长拖尾就会垂直于轮廓扎出去、横穿心内 */
-        spin: rand(0.22, 0.55) * (Math.random() < 0.5 ? 1 : -1),
+        rotSpeed: rand(0.55, 1.35) * (Math.random() < 0.5 ? 1 : -1),  // 绕管滚动速度（三维旋转，更快更明显）
+        /* 拖尾这么长，绕管圈数必须很小：只允许轻微盘旋（每圈 0.06–0.20 圈），
+           给到半圈以上，超长拖尾就会垂直于轮廓扎出去、横穿心内 */
+        spin: rand(0.06, 0.20) * (Math.random() < 0.5 ? 1 : -1),
         size: rand(0.50, 1.35),
         baseA: rand(0.56, 1.0),
         a: 0,
         flash: 0,
-        /* 拖尾这么长，三个点（头/中/尾）画直线会切出心形 ——
-           改成沿拖尾取 5 个点，各自解算螺旋位置，拖尾才能贴着轮廓弯曲 */
-        px: new Float32Array(5),                         // 本帧拖尾 5 个端点（0=头 4=尾）
-        py: new Float32Array(5),
-        pz: new Float32Array(5),                         // 各点深度（±1）
+        /* 拖尾这么长，5 个点画直线都会切出心形 ——
+           改成沿拖尾取 9 个点，各自解算螺旋位置，拖尾才能贴着轮廓弯曲 */
+        px: new Float32Array(9),                         // 本帧拖尾 9 个端点（0=头 8=尾）
+        py: new Float32Array(9),
+        pz: new Float32Array(9),                         // 各点深度（±1）
         fu: Math.random() * TAU,                         // 闪烁相位
         fs: rand(2.2, 8.4),                              // 闪烁频率
         streak: METEOR_STREAKS[METEOR_WEIGHT[randInt(METEOR_WEIGHT.length)]]
@@ -918,7 +1006,7 @@
     // 极淡的一道脊：光丝删掉后，边界的持续可读性就靠它与光屑 ——
     // 比原来亮一档，但仍远低于会糊住空隙的阈值
     g.lineWidth = BAND_HALF * 0.24 * bs;
-    g.strokeStyle = 'hsla(326,100%,80%,0.085)';
+    g.strokeStyle = 'hsla(326,100%,80%,0.105)';
     g.stroke(outline);
 
     /* ② 缠绕丝线 → 已移除（用户要求只保留光屑）。
@@ -995,7 +1083,7 @@
 
   const _h = { x: 0, y: 0 }, _t = { x: 0, y: 0 };
   const _m = { x: 0, y: 0, d: 0 };
-  const _rx5 = new Float64Array(5), _ry5 = new Float64Array(5);   // 光屑倒影的 5 个镜像端点
+  const _rx9 = new Float64Array(9), _ry9 = new Float64Array(9);   // 光屑倒影的 9 个镜像端点
 
   /* 心形单位坐标 → 屏幕坐标（含心跳缩放与整体摆动） */
   function heartToScreen(hx, hy, out) {
@@ -1052,8 +1140,8 @@
     for (let k = 0; k < SEG; k++) {
       const z = (zs[k] + zs[k + 1]) * 0.5;
       const zf = 0.5 + 0.5 * z;
-      const wK = (0.70 + 0.52 * zf) * (1 - 0.24 * k / (SEG - 1));
-      const aK = (0.34 + 0.66 * zf) * (1 - 0.07 * k);
+      const wK = (0.56 + 0.70 * zf) * (1 - 0.26 * k / (SEG - 1));
+      const aK = (0.18 + 0.82 * zf) * (1 - 0.075 * k);
       const sx1 = 1 - k / SEG, sx0 = 1 - (k + 1) / SEG;
       drawHalf(spr, sx0, sx1, xs[k + 1], ys[k + 1], xs[k], ys[k], w * wK, a * aK);
     }
@@ -1154,23 +1242,24 @@
     //    水下那几段与水上那几段必然一一对应）
     for (const m of meteors) {
       if (m.a <= 0.008) continue;
+      const PN = m.px.length;
       let dMid = 0, off = true;
-      for (let k = 0; k < 5; k++) {
+      for (let k = 0; k < PN; k++) {
         mirrorPoint(m.px[k], m.py[k], _m);
-        _rx5[k] = _m.x; _ry5[k] = _m.y;
-        if (k === 2) dMid = _m.d;
+        _rx9[k] = _m.x; _ry9[k] = _m.y;
+        if (k === (PN >> 1)) dMid = _m.d;
         if (_m.y < H) off = false;
       }
       if (off) continue;
       const fade = 0.18 + 0.74 * Math.pow(1 - Math.min(1, dMid), 0.7);
       const a = m.a * fade * RFL;
-      drawMeteorPts(m.streak, _rx5, _ry5, m.pz, m.size * wStreak, a);
+      drawMeteorPts(m.streak, _rx9, _ry9, m.pz, m.size * wStreak, a);
 
       // 水下亮核（与本体头部一一对应）
       const zh = 0.5 + 0.5 * m.pz[0];
       const hs = m.size * scale * 0.24 * (0.70 + 0.52 * zh);
       ctx.globalAlpha = Math.min(1, a * 0.75 * (0.34 + 0.66 * zh));
-      ctx.drawImage(WATER_CORE, _rx5[0] - hs, _ry5[0] - hs, hs * 2, hs * 2);
+      ctx.drawImage(WATER_CORE, _rx9[0] - hs, _ry9[0] - hs, hs * 2, hs * 2);
     }
     ctx.globalAlpha = 1;
 
@@ -1334,7 +1423,18 @@
       W * (1 + over * 2),
       H * (1 + over * 2)
     );
-    ctx.globalAlpha = 1;
+
+    // 第二层：缓慢旋转的旋涡星云（神秘莫测的流动感）
+    if (nebulaSpin) {
+      const sw = W * 1.9, sh = H * 1.9;
+      ctx.save();
+      ctx.globalAlpha = 0.60 * breathe;
+      ctx.translate(W / 2, H * 0.42);
+      ctx.rotate(Math.sin(time * 0.045) * 0.10 + time * 0.006);
+      ctx.drawImage(nebulaSpin, -sw / 2, -sh / 2, sw, sh);
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
 
     // 尘埃光斑
     for (const d of dust) {
@@ -1493,14 +1593,16 @@
 
       const span = m.tail * m.len * m.dir;
 
+      const PN = m.px.length;                            // 拖尾端点数量（0=头 … PN−1=尾）
       /* 三维螺旋：法向偏移 = R·cosθ，深度 z = R·sinθ。
          θ 随时间滚动（rotSpeed），并沿拖尾推进 spin 圈。
          长拖尾时代半径收紧到 1.1 倍：再大拖尾就甩离轮廓了。
-         拖尾上取 5 个点逐点解算 —— 直线弦会切出心形，贴着轮廓走才不会。 */
+         拖尾上取 9 个点逐点解算 —— 直线弦会切出心形，贴着轮廓走才不会。
+         背面（z<0）沿竖直方向明显上抬（模拟略俯视的视角），立体感更强。 */
       const R = BAND_HALF * m.tubeR * 1.1;
       const th0 = m.theta0 + m.rotSpeed * time;
-      for (let k = 0; k < 5; k++) {
-        const f = k / 4;                                 // 0 头 … 1 尾
+      for (let k = 0; k < PN; k++) {
+        const f = k / (PN - 1);                          // 0 头 … 1 尾
         const uk = wrap01(m.u - span * f);
         const p = heartPoint(tAtArc(uk));
         normalAt(uk, _nrm);
@@ -1508,7 +1610,7 @@
         const co = Math.cos(th), si = Math.sin(th);
         const taper = 1 - 0.54 * f;                      // 尾部逐渐收回中线
         const o = R * co * taper;
-        heartToScreen(p.x + _nrm.x * o, p.y + _nrm.y * o - si * R * 0.20 * taper, _h);
+        heartToScreen(p.x + _nrm.x * o, p.y + _nrm.y * o - si * R * 0.36 * taper, _h);
         m.px[k] = _h.x; m.py[k] = _h.y; m.pz[k] = si;
       }
     }
