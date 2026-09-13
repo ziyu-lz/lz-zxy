@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04030b">
+<title>𝓛𝓩 ꨄ 𝓩𝓧𝓨</title>
+<meta name="description" content="一片神秘美丽的星空，正中间是一颗由粒子构成的爱心。">
+<meta property="og:title" content="𝓛𝓩 ꨄ 𝓩𝓧𝓨">
+<meta property="og:description" content="一片神秘美丽的星空，正中间是一颗由粒子构成的爱心。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ff5c8a' d='M16 28S3 19.5 3 11.6C3 7.4 6.2 4 10.2 4c2.4 0 4.5 1.2 5.8 3.1C17.3 5.2 19.4 4 21.8 4 25.8 4 29 7.4 29 11.6 29 19.5 16 28 16 28z'/%3E%3C/svg%3E">
+<style>
+  /* ------------------------------------------------------------------
+     ꨄ (U+AA04) 属于「占文 / Cham」区段，Windows 默认不带这个字体，
+     不内嵌的话所有 Windows 浏览器都会把它画成豆腐块。
+     这里内嵌 Noto Sans Cham 的最小 woff2 子集（仅 U+AA00–AA5F，约 12KB），
+     只用字形表里的一个 U+AA04，离线、免网络、任何系统都能正确显示。
+  ------------------------------------------------------------------ */
+  @font-face {
+    font-family: "ChamHeart";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(data:font/woff2;base64,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) format("woff2");
+    unicode-range: U+AA04;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #010104;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #fff;
+    cursor: crosshair;
+  }
+
+  #scene {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* 暗角，让视线自然聚拢到中心 */
+  .vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 78% 68% at 50% 50%,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.14) 46%,
+        rgba(2, 1, 8, 0.62) 78%,
+        rgba(1, 1, 4, 0.92) 100%);
+    mix-blend-mode: multiply;
+  }
+
+  .hint {
+    position: fixed;
+    left: 50%;
+    bottom: clamp(20px, 5vh, 52px);
+    transform: translateX(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.42);
+    text-shadow: 0 0 18px rgba(255, 120, 170, 0.35);
+    animation: hintIn 2.4s cubic-bezier(.2, .8, .2, 1) 1.4s both,
+               hintOut 3s ease 9s forwards;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  @keyframes hintIn  { from { opacity: 0; transform: translate(-50%, 10px); }
+                       to   { opacity: 1; transform: translate(-50%, 0); } }
+  @keyframes hintOut { to   { opacity: 0; } }
+
+  /* ------------------------------------------------------------------
+     心形正中的名字：𝓛𝓩 ꨄ 𝓩𝓧𝓨
+     爱心尺寸、纵向位置现在都由脚本按几何包围盒算出来（因为下面多了水面，
+     爱心不再居中于屏幕），所以铭文位置和字号也改由脚本下发的两个变量驱动：
+       --unit      1 个心形几何单位 = 多少像素
+       --names-top 铭文中心距屏幕顶端的像素
+     这样无论窗口怎么变、爱心放多大，铭文永远钉在心口正中。
+  ------------------------------------------------------------------ */
+  .names {
+    position: fixed;
+    left: 50%;
+    top: var(--names-top, 42%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+  }
+
+  .names-row {
+    display: flex;
+    align-items: center;
+    gap: 0.34em;
+    /* 4.2 个几何单位 ≈ 原来的 5.8vmin，随爱心一起缩放 */
+    font-size: clamp(17px, calc(var(--unit, 14px) * 4.2), 96px);
+    font-weight: 400;
+    /* backwards 而不是 both：延迟期间沿用起始帧（透明），
+       动画结束后回归元素自身的样式（本来就不透明），
+       万一动画被中断也不会卡在某个关键帧上。 */
+    animation: nameIn 1.8s cubic-bezier(.2, .8, .2, 1) 1.1s backwards;
+  }
+
+  /* 𝓛𝓩 / 𝓩𝓧𝓨 用的是「数学粗花体」区段（U+1D4D0–U+1D4FF），
+     系统自带的数学字体（Windows 是 Cambria Math）能直接画出来，
+     后面几个是给缺字系统的备选。 */
+  .n {
+    font-family: "Cambria Math", "STIX Two Math", "Latin Modern Math",
+                 "Noto Sans Math", "Segoe UI Symbol", Georgia,
+                 "Times New Roman", "Songti SC", "STSong", "Noto Serif SC", serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-right: -0.15em;      /* 抵消末尾多出的字距，文字才是真正居中 */
+    /* 字母本身就是一小片星空：深空紫蓝 → 品红的底色渐变上撒白色星点，
+       星点只在字形内部出现（background-clip: text），并随时间缓缓漂移。 */
+    background-image:
+      radial-gradient(1.8px 1.8px at 16% 24%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0) 70%),
+      radial-gradient(1.2px 1.2px at 63% 12%, rgba(228, 240, 255, 0.92) 0%, rgba(228, 240, 255, 0) 70%),
+      radial-gradient(2.3px 2.3px at 84% 56%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%),
+      radial-gradient(1.1px 1.1px at 36% 74%, rgba(255, 234, 250, 0.88) 0%, rgba(255, 234, 250, 0) 70%),
+      radial-gradient(1.5px 1.5px at 50% 42%, rgba(208, 224, 255, 0.92) 0%, rgba(208, 224, 255, 0) 70%),
+      radial-gradient(1.0px 1.0px at 8% 88%, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0) 70%),
+      radial-gradient(1.4px 1.4px at 72% 86%, rgba(255, 250, 255, 0.88) 0%, rgba(255, 250, 255, 0) 70%),
+      radial-gradient(130% 95% at 50% 0%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0) 56%),
+      linear-gradient(180deg, #edf3ff 0%, #c2b0ff 26%, #6f63ff 50%, #c44eda 74%, #ff86c2 100%);
+    background-size: 320% 320%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    /* 深色投影压住中心的玫红辉光，保证任何背景下都清晰 */
+    filter: drop-shadow(0 0.02em 0.05em rgba(12, 0, 10, 0.9))
+            drop-shadow(0 0 0.18em rgba(255, 70, 140, 0.75));
+    animation: starDrift 36s linear infinite;
+  }
+
+  /* 星空在字母内部缓慢流动（整张背景一起动，星点与色彩一起漂） */
+  @keyframes starDrift {
+    from { background-position: 0% 0%; }
+    to   { background-position: 100% 55%; }
+  }
+
+  /* 中间那枚花体爱心 ꨄ：直接用内嵌字体画字形（不再画 SVG），
+     玫红渐变 + 描边辉光，随心跳同步搏动。
+     垂直位置是量出来的：Cham 字形带一条向左下卷的尾巴，墨迹重心天然偏低，
+     在 align-items:center 下比花体字母的墨迹中心低约 0.32em，
+     这里上提 0.20em 让它像带下伸部的字母一样稳稳坐在字行的中段。 */
+  .glyph-heart {
+    font-family: "ChamHeart", "Noto Sans Cham", "Apple Symbols",
+                 "Segoe UI Symbol", serif;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin: 0 -0.02em;
+    position: relative;
+    top: -0.2em;
+    background-image:
+      radial-gradient(2.1px 2.1px at 30% 24%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%),
+      radial-gradient(1.3px 1.3px at 68% 42%, rgba(255, 240, 250, 0.85) 0%, rgba(255, 240, 250, 0) 70%),
+      radial-gradient(1.1px 1.1px at 44% 72%, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0) 70%),
+      linear-gradient(180deg, #fff6fa 0%, #ff8ab8 42%, #ff2d7a 78%, #c9124f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform-origin: 50% 56%;
+    filter: drop-shadow(0 0 0.06em rgba(255, 255, 255, 0.6))
+            drop-shadow(0 0 0.2em rgba(255, 60, 130, 0.85))
+            drop-shadow(0 0 0.5em rgba(255, 30, 110, 0.5));
+    animation: beat 1.34s ease-in-out infinite;
+  }
+
+  /* 极端兜底：万一某个系统连数学花体都没有（会渲染成方块），
+     就退回衬线斜体普通字母，宁可朴素也别出现豆腐块。 */
+  .no-script-glyph .n {
+    font-family: Georgia, "Times New Roman", "Songti SC", "STSong", "Noto Serif SC", serif;
+    font-style: italic;
+    letter-spacing: 0.12em;
+  }
+  .no-script-glyph .glyph-heart {
+    font-family: "ChamHeart", "Noto Sans Cham", serif;
+    font-style: normal;
+  }
+
+  @keyframes nameIn {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* 与脚本里的 heartBeat 对齐：周期 1.34s，在 5% 与 23% 处两次「咚—哒」 */
+  @keyframes beat {
+    0%   { transform: scale(1); }
+    5%   { transform: scale(1.14); }
+    14%  { transform: scale(1.005); }
+    23%  { transform: scale(1.08); }
+    34%  { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hint { animation: none; opacity: 0.42; }
+    .names-row { animation: none; }
+    .glyph-heart { animation: none; }
+    .n { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="names" role="img" aria-label="LZ 和 ZXY">
+    <div class="names-row">
+      <span class="n" data-plain="LZ">𝓛𝓩</span>
+      <span class="n glyph-heart">ꨄ</span>
+      <span class="n" data-plain="ZXY">𝓩𝓧𝓨</span>
+    </div>
+  </div>
+
+  <div class="hint">移动光标 · 轻触星海</div>
+
+<script>
+/* =======================================================================
+   𝓛𝓩 ꨄ 𝓩𝓧𝓨
+   星空背景 + 粒子爱心。纯 Canvas 2D，零依赖，单文件可离线运行。
+   ======================================================================= */
+(() => {
+  'use strict';
+
+  const canvas = document.getElementById('scene');
+  const ctx = canvas.getContext('2d', { alpha: false });
+
+  const TAU = Math.PI * 2;
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const randInt = n => Math.floor(Math.random() * n);
+  const wrap01 = v => v - Math.floor(v);      // 弧长参数回卷到 [0,1)
+
+  /* ---------------- 心形几何包围盒 ----------------
+     参数方程 x = 16sin³t / y = 13cos t − 5cos2t − 2cos3t − cos4t 的实际取值：
+       屏幕坐标下 x ∈ [−16, 16]，y ∈ [−11.95, 17]
+     把它写成常量，是为了能直接按「心尖落水」这个约束反推缩放与圆心位置。 */
+  const HEART_W = 32;      // 宽度（几何单位）
+  const HEART_H = 29;      // 高度（几何单位）
+  const HEART_TOP = -12;   // 上缘相对圆心的 y
+
+  /* ---------------- 边界「光丝」的参数 ----------------
+     边界不是一条描边，也不是一根实心的光绳，而是一圈**相互纠缠的短丝线**：
+     每根丝只占周长的一小段，在带子里横向游走、甚至从一侧窜到另一侧，
+     于是丝与丝会交错缠绕，丝与丝之间又留着空隙 —— 乱，但不糊。
+     带子里还散着少量碎钻、珠体与星芒，负责撑住「有厚度」的体量。 */
+  const BAND_HALF = 2.30;             // 光丝活动的半宽（几何单位）
+  const BAND_PAD  = 6.5;              // 离屏图层向包围盒外扩的余量（放光晕与轨道环）
+  const BAND_X0   = -16 - BAND_PAD;   // 图层左上角对应的几何坐标
+  const BAND_Y0   = -12 - BAND_PAD;
+  const BAND_W    = HEART_W + BAND_PAD * 2;
+  const BAND_H    = HEART_H + BAND_PAD * 2;
+  const RFL       = 0.40;             // 倒影的整体亮度系数（必须明显低于本体）
+
+  /* ---------------- 场景状态 ---------------- */
+  let W = 0, H = 0, DPR = 1;
+  let cx = 0, cy = 0;          // 爱心中心
+  let scale = 1;               // 爱心单位 → 像素
+  let waterY = 0;              // 水面（水线）的 y
+  let wDepth = 0;              // 水面到屏幕底部的像素深度
+  let squash = 0.4;            // 倒影的透视压缩系数
+  let bgGrad = null;
+  let nebula = null;
+  let wGrad = null;            // 水体渐变
+  let wLineGrad = null;        // 水线亮边渐变
+
+  let stars = [];
+  let dust = [];
+  let shooters = [];
+  let glints = [];             // 水面碎光
+  let fill = [];               // 爱心内部粒子
+  let meteors = [];            // 光丝之间流动的光屑
+  let bandStars = [];          // 嵌在光丝间的星芒
+  let waterStars = [];         // 倒映的星点
+
+  /* 丝带图层：丝线、珠体、碎钻的几何是静态的，一次性画进离屏画布，
+     主循环只做一次带变换的 drawImage。倒影也复用同一张图（镜像 + 逐条错位），
+     所以「水上的丝带」与「水下的丝带」天然是同一批像素、严格一一对应。 */
+  let bandCv = null;
+  let bandBS = 1;              // 离屏图层：像素 / 几何单位
+  let horizonGrad = null;      // 地平线蓝雾
+
+  let time = 0;
+  let lastTs = 0;
+  let rafId = 0;
+
+  const pointer = { x: -1e4, y: -1e4, px: -1e4, py: -1e4, vx: 0, vy: 0, active: false, power: 0 };
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------- 预渲染发光精灵 ----------------
+     radial gradient 每帧创建开销太大，先烘焙成 64×64 贴图，主循环只做 drawImage。 */
+  function makeSprite(h, s, l) {
+    const S = 64;
+    const c = document.createElement('canvas');
+    c.width = c.height = S;
+    const g = c.getContext('2d');
+    const grad = g.createRadialGradient(S / 2, S / 2, 0, S / 2, S / 2, S / 2);
+    grad.addColorStop(0.00, 'hsla(' + h + ',' + s + '%,' + l + '%,1)');
+    grad.addColorStop(0.14, 'hsla(' + h + ',' + s + '%,' + l + '%,0.72)');
+    grad.addColorStop(0.36, 'hsla(' + h + ',' + s + '%,' + Math.max(6, l - 20) + '%,0.20)');
+    grad.addColorStop(0.66, 'hsla(' + h + ',' + s + '%,' + Math.max(6, l - 28) + '%,0.05)');
+    grad.addColorStop(1.00, 'hsla(' + h + ',' + s + '%,' + l + '%,0)');
+    g.fillStyle = grad;
+    g.beginPath();
+    g.arc(S / 2, S / 2, S / 2, 0, TAU);
+    g.fill();
+    return c;
+  }
+
+  // 爱心粒子的色相：玫红 → 品红 → 微暖白
+  const HEART_SPRITES = [332, 338, 344, 350, 356, 316].map(h => makeSprite(h, 100, 70));
+  const CORE_SPRITE = makeSprite(340, 100, 80);
+
+  // 星点：偏冷白 / 淡蓝 / 微暖 / 淡紫
+  const STAR_SPRITES = [[210, 6, 100], [215, 55, 92], [42, 60, 92], [265, 45, 92]]
+    .map(t => makeSprite(t[0], t[1], t[2]));
+
+  /* 亮星的十字星芒。
+     要点：星芒必须由「细长的尖刺」构成 —— 之前用被压扁的径向渐变去凑，
+     半径一放大就退化成一团模糊的光斑，完全不像镜头星芒。
+     这里改成四根细长的三角尖刺（主十字长而细，对角副尖短一半），
+     用线性渐变从中心向外淡出，中心再叠一枚紧致的亮核。 */
+  function makeFlare(h, s, l) {
+    const S = 128, C = S / 2;
+    const c = document.createElement('canvas');
+    c.width = c.height = S;
+    const g = c.getContext('2d');
+    g.globalCompositeOperation = 'lighter';
+
+    const spike = (ang, len, w0, a) => {
+      g.save();
+      g.translate(C, C);
+      g.rotate(ang);
+      const lg = g.createLinearGradient(0, 0, len, 0);
+      lg.addColorStop(0.00, 'hsla(' + h + ',' + s + '%,100%,' + a + ')');
+      lg.addColorStop(0.10, 'hsla(' + h + ',' + s + '%,' + Math.min(100, l + 8) + '%,' + (a * 0.72) + ')');
+      lg.addColorStop(0.42, 'hsla(' + h + ',' + s + '%,' + l + '%,' + (a * 0.20) + ')');
+      lg.addColorStop(1.00, 'hsla(' + h + ',' + s + '%,' + l + '%,0)');
+      g.fillStyle = lg;
+      g.beginPath();
+      g.moveTo(0, -w0);
+      g.quadraticCurveTo(len * 0.30, -w0 * 0.30, len, 0);
+      g.quadraticCurveTo(len * 0.30, w0 * 0.30, 0, w0);
+      g.closePath();
+      g.fill();
+      g.restore();
+    };
+
+    // 主十字：长、细、亮
+    for (let i = 0; i < 4; i++) spike(i * Math.PI / 2, C - 1, 2.4, 0.95);
+    // 对角副尖：短一半、更细，星芒才有"镜头"的味道
+    for (let i = 0; i < 4; i++) spike(Math.PI / 4 + i * Math.PI / 2, (C - 1) * 0.52, 1.3, 0.45);
+
+    const cg = g.createRadialGradient(C, C, 0, C, C, 13);
+    cg.addColorStop(0.00, 'rgba(255,255,255,1)');
+    cg.addColorStop(0.22, 'hsla(' + h + ',' + s + '%,96%,0.72)');
+    cg.addColorStop(0.55, 'hsla(' + h + ',' + s + '%,' + l + '%,0.18)');
+    cg.addColorStop(1.00, 'hsla(' + h + ',' + s + '%,' + l + '%,0)');
+    g.fillStyle = cg;
+    g.beginPath();
+    g.arc(C, C, 13, 0, TAU);
+    g.fill();
+    return c;
+  }
+
+  const FLARES = [[205, 25, 100], [45, 30, 100], [330, 40, 100]].map(t => makeFlare(t[0], t[1], t[2]));
+
+  /* 流星拖尾：一次性烘焙的渐变长条 —— 尾部细而透明，越靠头部越粗越亮。
+     头部亮核单独用径向渐变画出。运行时只做一次 drawImage + 旋转，不必每帧建渐变。 */
+  function makeStreak(h, s, l) {
+    const L = 150, HH = 34, mid = HH / 2;
+    const c = document.createElement('canvas');
+    c.width = L;
+    c.height = HH;
+    const g = c.getContext('2d');
+    const col = (x, hh, a, ll) => {
+      g.fillStyle = 'hsla(' + h + ',' + s + '%,' + ll + '%,' + a + ')';
+      g.fillRect(x, mid - hh / 2, 1, hh);
+    };
+    for (let x = 0; x < L; x++) {
+      const u = x / (L - 1);
+      const r = 0.55 + 3.45 * Math.pow(u, 1.15);   // 越靠头部越粗
+      const a = Math.pow(u, 2.6);                  // 尾部淡出
+      if (a < 0.004) continue;
+      col(x, r * 7.6, a * 0.09, l);                // 外圈柔光
+      col(x, r * 3.6, a * 0.24, l + 8);
+      col(x, r * 1.8, a * 0.60, l + 16);
+      col(x, r * 0.8, a, Math.min(100, l + 34));   // 内芯
+    }
+    const hg = g.createRadialGradient(L - 9, mid, 0, L - 9, mid, 15);
+    hg.addColorStop(0, '#ffffff');
+    hg.addColorStop(0.26, 'hsla(' + h + ',' + Math.min(100, s + 8) + '%,' + Math.min(100, l + 26) + '%,0.68)');
+    hg.addColorStop(1, 'hsla(' + h + ',' + s + '%,' + l + '%,0)');
+    g.fillStyle = hg;
+    g.beginPath();
+    g.arc(L - 9, mid, 15, 0, TAU);
+    g.fill();
+    return c;
+  }
+
+  // 边缘流星的色调：主体玫红/品红，掺几枚冷白与电光蓝，闪烁时才有层次
+  const METEOR_STREAKS = [330, 342, 318, 352, 300, 268, 205, 196]
+    .map(h => makeStreak(h, h > 210 ? 88 : 96, h > 210 ? 72 : 70));
+  const METEOR_WEIGHT = [0, 0, 1, 1, 2, 3, 4, 5, 6];   // 下标即贴图序号，前几个权重更高
+
+  // 水面倒影色：比本体更冷、更暗，模拟水中散射与吸收
+  const WATER_SPRITES = [[312, 58, 56], [324, 60, 60], [336, 62, 58], [288, 50, 54]]
+    .map(t => makeSprite(t[0], t[1], t[2]));
+  const WATER_CORE = makeSprite(316, 62, 60);
+
+  /* ---------------- 心形参数方程 ----------------
+       x = 16sin³t
+       y = 13cos t − 5cos2t − 2cos3t − cos4t
+     （数学坐标 y 向上，绘制时取反） */
+  function heartPoint(t) {
+    const st = Math.sin(t);
+    return {
+      x: 16 * st * st * st,
+      y: -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t))
+    };
+  }
+
+  // 弧长查找表 —— 让描边粒子沿曲线均匀分布，爱心轮廓才干净利落
+  const LUT_N = 1600;
+  const LUT_T = new Float32Array(LUT_N + 1);
+  const LUT_S = new Float32Array(LUT_N + 1);
+  (function buildLUT() {
+    let acc = 0;
+    let prev = heartPoint(0);
+    LUT_T[0] = 0;
+    LUT_S[0] = 0;
+    for (let i = 1; i <= LUT_N; i++) {
+      const t = (i / LUT_N) * TAU;
+      const p = heartPoint(t);
+      acc += Math.hypot(p.x - prev.x, p.y - prev.y);
+      LUT_T[i] = t;
+      LUT_S[i] = acc;
+      prev = p;
+    }
+  })();
+  const LUT_TOTAL = LUT_S[LUT_N];
+
+  function tAtArc(u) {
+    const target = u * LUT_TOTAL;
+    let lo = 0, hi = LUT_N;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (LUT_S[mid] < target) lo = mid + 1; else hi = mid;
+    }
+    return LUT_T[lo];
+  }
+
+  /* 面积加权的 t 采样表。
+     心形是「星形域」，内部点可写成 heartPoint(t) × r，此时面积元是
+        dA = r · |x(t)·y′(t) − y(t)·x′(t)| · dr · dt
+     直接用均匀的 t 采样会把粒子全堆到 x≈0 的中轴线上（因为 x = 16sin³t 在
+     t = 0 / π 附近变化极慢），心的中央会凭空长出一条竖脊。
+     这里按 |cross| 建一张累积分布表，反解出均匀的 t，粒子才铺得匀。 */
+  const CDF_N = 1024;
+  const CDF = new Float32Array(CDF_N + 1);
+  (function buildAreaCDF() {
+    const hp = 1e-3;
+    let acc = 0;
+    for (let i = 1; i <= CDF_N; i++) {
+      const t = (i / CDF_N) * TAU;
+      const p = heartPoint(t);
+      const a = heartPoint(t - hp), b = heartPoint(t + hp);
+      const vx = (b.x - a.x) / (2 * hp), vy = (b.y - a.y) / (2 * hp);
+      acc += Math.abs(p.x * vy - p.y * vx);
+      CDF[i] = acc;
+    }
+    for (let i = 0; i <= CDF_N; i++) CDF[i] /= acc;
+  })();
+
+  function tAtArea(u) {
+    let lo = 0, hi = CDF_N;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (CDF[mid] < u) lo = mid + 1; else hi = mid;
+    }
+    return (lo / CDF_N) * TAU;
+  }
+
+  /* 轮廓在弧长位置 u 处的单位法线。
+     丝带上的所有东西（丝线、珠体、星芒、光屑）都靠它沿法线偏移，
+     才能在拐弯处也贴着心形走，而不是沿某个固定方向歪出去。 */
+  const _nrm = { x: 0, y: 0 };
+  function normalAt(u, out) {
+    const a = heartPoint(tAtArc(wrap01(u - 0.004)));
+    const b = heartPoint(tAtArc(wrap01(u + 0.004)));
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const L = Math.hypot(dx, dy) || 1;
+    out.x = -dy / L;
+    out.y = dx / L;
+    return out;
+  }
+
+  /* ---------------- 心跳曲线 ----------------
+     一次「咚—哒」，比单纯正弦更有生命感 */
+  function heartBeat(t) {
+    const P = 1.34;
+    const p = (t % P) / P;
+    const thump = (c, w, a) => a * Math.exp(-Math.pow((p - c) / w, 2));
+    return 1 + 0.052 * thump(0.05, 0.052, 1) + 0.030 * thump(0.23, 0.075, 1);
+  }
+
+  /* ---------------- 初始化 / 自适应 ---------------- */
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    // 水线：下方约 28% 留给湖面（竖屏稍微压低一点，给爱心多留些空间）
+    const portrait = H > W;
+    waterY = Math.round(H * (portrait ? 0.745 : 0.72));
+    wDepth = H - waterY;
+
+    const bandTop = H * (portrait ? 0.06 : 0.05);
+    const tipGap = H * 0.022;             // 心尖与水线的静止间距
+
+    // 放大爱心：能占满「上留白 → 水线上方」这段空间
+    const maxW = W * (portrait ? 0.88 : 0.52);
+    const maxH = waterY - tipGap - bandTop;
+    scale = Math.min(maxW / HEART_W, maxH / HEART_H);
+    cx = W / 2;
+
+    // 心尖刚好悬在水线上：beat 峰值时 1.052 倍，正好轻轻吻到水面
+    cy = waterY - tipGap - (HEART_H + HEART_TOP) * scale;
+
+    /* 倒影压缩系数：镜像后的心脏最深处是 (waterY − 爱心上缘) × squash，
+       取一个刚好不越出屏幕底部的值，保证倒影「完整」出现在画面里。 */
+    const refTop = cy + HEART_TOP * scale;
+    const avail = Math.max(40, H - waterY - 10);
+    squash = Math.max(0.20, Math.min(0.62, avail / Math.max(1, waterY - refTop)));
+
+    // 深空底色：整体压暗，星云和丝带才有地方「亮」出来
+    bgGrad = ctx.createLinearGradient(0, 0, W * 0.35, waterY);
+    bgGrad.addColorStop(0, '#040312');
+    bgGrad.addColorStop(0.45, '#02020b');
+    bgGrad.addColorStop(1, '#000003');
+
+    // 地平线附近的冷蓝雾：参考图里下半部天空明显偏蓝
+    horizonGrad = ctx.createLinearGradient(0, H * 0.34, 0, waterY);
+    horizonGrad.addColorStop(0.00, 'rgba(26,52,150,0)');
+    horizonGrad.addColorStop(0.55, 'rgba(30,62,168,0.045)');
+    horizonGrad.addColorStop(1.00, 'rgba(56,100,220,0.105)');
+
+    // 水体：半透明，让天上的星点透下来一点，当作「倒映的星河」
+    wGrad = ctx.createLinearGradient(0, waterY, 0, H);
+    wGrad.addColorStop(0, 'rgba(12,18,50,0.62)');
+    wGrad.addColorStop(0.16, 'rgba(7,11,36,0.84)');
+    wGrad.addColorStop(0.55, 'rgba(3,6,22,0.94)');
+    wGrad.addColorStop(1, 'rgba(1,2,9,0.985)');
+
+    // 水线亮边
+    wLineGrad = ctx.createLinearGradient(0, waterY - 16, 0, waterY + 26);
+    wLineGrad.addColorStop(0.00, 'rgba(255,90,160,0)');
+    wLineGrad.addColorStop(0.38, 'rgba(255,120,185,0.11)');
+    wLineGrad.addColorStop(0.50, 'rgba(255,205,232,0.34)');
+    wLineGrad.addColorStop(0.63, 'rgba(150,195,255,0.13)');
+    wLineGrad.addColorStop(1.00, 'rgba(120,165,255,0)');
+
+    nebula = buildNebula();
+    buildStars();
+    buildDust();
+    buildGlints();
+    buildWaterStars();
+    buildHeart();
+    buildHeartBand();
+
+    // 铭文位置与字号跟爱心走：cy 上方 1 个几何单位，即心口正中
+    const st = document.documentElement.style;
+    st.setProperty('--unit', scale.toFixed(2) + 'px');
+    st.setProperty('--names-top', (cy - scale).toFixed(1) + 'px');
+  }
+
+  /* 星云：离屏低分辨率绘制，主循环里放大贴回，省下大量渐变开销 */
+  function buildNebula() {
+    const nw = Math.max(2, Math.round(W / 3));
+    const nh = Math.max(2, Math.round(H / 3));
+    const c = document.createElement('canvas');
+    c.width = nw;
+    c.height = nh;
+    const g = c.getContext('2d');
+    g.globalCompositeOperation = 'lighter';
+
+    /* 参考图的星空有三层：上方是冷紫/靛蓝的稀薄星云，下方靠近地平线是
+       两团偏亮的云，正中还有一片被水线照亮的薄雾。三层叠出纵深感。 */
+    const blobs = [
+      // 高空的稀薄星云
+      { x: 0.20, y: 0.24, r: 0.58, h: 268, a: 0.16 },
+      { x: 0.80, y: 0.20, r: 0.50, h: 214, a: 0.15 },
+      { x: 0.56, y: 0.36, r: 0.46, h: 286, a: 0.10 },
+      { x: 0.50, y: 0.12, r: 0.40, h: 330, a: 0.09 },
+      // 地平线云团（左 / 右）
+      { x: 0.13, y: 0.68, r: 0.34, h: 210, a: 0.20 },
+      { x: 0.29, y: 0.73, r: 0.22, h: 196, a: 0.17 },
+      { x: 0.88, y: 0.67, r: 0.33, h: 206, a: 0.19 },
+      { x: 0.71, y: 0.74, r: 0.21, h: 222, a: 0.14 },
+      // 正下方被水面照亮的薄雾
+      { x: 0.50, y: 0.76, r: 0.62, h: 202, a: 0.11 },
+      { x: 0.36, y: 0.86, r: 0.30, h: 268, a: 0.11 },
+      { x: 0.66, y: 0.88, r: 0.28, h: 208, a: 0.10 }
+    ];
+
+    for (const b of blobs) {
+      const x = b.x * nw, y = b.y * nh, r = b.r * Math.max(nw, nh);
+      const grad = g.createRadialGradient(x, y, 0, x, y, r);
+      grad.addColorStop(0.00, 'hsla(' + b.h + ',88%,64%,' + b.a + ')');
+      grad.addColorStop(0.42, 'hsla(' + b.h + ',84%,52%,' + (b.a * 0.34) + ')');
+      grad.addColorStop(1.00, 'hsla(' + b.h + ',80%,42%,0)');
+      g.fillStyle = grad;
+      g.fillRect(x - r, y - r, r * 2, r * 2);
+    }
+
+    /* 地平线上的积云：参考图里左、右各有一团被星光照亮的云。
+       用一串大小不一的小光斑排成一条微微起伏的弧，比单个大光斑更像云。 */
+    const cloud = (ox, oy, spread, n, hue, a) => {
+      for (let i = 0; i < n; i++) {
+        const t = i / (n - 1) - 0.5;
+        const x = (ox + t * spread + rand(-0.018, 0.018)) * nw;
+        const y = (oy - Math.cos(t * 3.0) * 0.030 + rand(-0.011, 0.011)) * nh;
+        const r = rand(0.048, 0.112) * Math.max(nw, nh);
+        const grad = g.createRadialGradient(x, y, 0, x, y, r);
+        grad.addColorStop(0.00, 'hsla(' + hue + ',86%,68%,' + (a * rand(0.80, 1.15)) + ')');
+        grad.addColorStop(0.44, 'hsla(' + hue + ',82%,56%,' + (a * 0.34) + ')');
+        grad.addColorStop(1.00, 'hsla(' + hue + ',80%,46%,0)');
+        g.fillStyle = grad;
+        g.fillRect(x - r, y - r, r * 2, r * 2);
+      }
+    };
+    cloud(0.15, 0.685, 0.30, 13, 208, 0.15);
+    cloud(0.86, 0.680, 0.28, 12, 206, 0.14);
+    cloud(0.68, 0.712, 0.20, 8, 222, 0.10);
+
+    return c;
+  }
+
+  function buildStars() {
+    stars = [];
+    const area = W * H;
+    const count = Math.round(Math.min(1300, Math.max(480, area / 1080)));
+
+    for (let i = 0; i < count; i++) {
+      // depth 决定视差、大小与漂移速度
+      const depth = Math.pow(Math.random(), 1.7);
+      const bright = Math.random() < 0.075;       // 少量亮星带十字星芒
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: 0.32 + depth * 1.5,
+        base: rand(0.38, 1.0) * (0.55 + depth * 0.55),
+        phase: Math.random() * TAU,
+        speed: rand(0.5, 2.1) + depth * 1.6,
+        depth,
+        drift: 0.035 + depth * 0.10,
+        flare: bright ? FLARES[randInt(FLARES.length)] : null,
+        flareA: bright ? rand(0.30, 0.60) : 0,
+        flareS: bright ? rand(14, 30) : 0,
+        sprite: STAR_SPRITES[Math.random() < 0.72 ? 0 : randInt(STAR_SPRITES.length)]
+      });
+    }
+
+    /* 几颗「主角级」亮星：星芒特别大、还会缓慢旋转式呼吸，
+       参考图里正是靠这几颗把星空撑出层次。位置分散、避开正中心。 */
+    const heroes = Math.round(Math.min(7, Math.max(3, W / 300)));
+    for (let i = 0; i < heroes; i++) {
+      const x = rand(W * 0.06, W * 0.94);
+      const y = rand(H * 0.04, waterY * 0.80);
+      stars.push({
+        x,
+        y: Math.abs(x - W / 2) < W * 0.16 ? rand(H * 0.04, H * 0.16) : y,
+        r: rand(1.5, 2.5),
+        base: rand(0.82, 1.0),
+        phase: Math.random() * TAU,
+        speed: rand(0.35, 0.9),
+        depth: 1,
+        drift: 0.02,
+        flare: FLARES[randInt(FLARES.length)],
+        flareA: rand(0.55, 0.88),
+        flareS: rand(42, 70),
+        hero: true,
+        sprite: STAR_SPRITES[0]
+      });
+    }
+  }
+
+  /* 水面碎光：一组位置固定的短光带，沿横向缓慢流动并明灭，
+     用来表现水面的波光粼粼，不参与任何物理，纯装饰。 */
+  function buildGlints() {
+    glints = [];
+    const n = Math.round(Math.min(150, Math.max(50, W / 9)));
+    for (let i = 0; i < n; i++) {
+      const d = Math.pow(Math.random(), 0.75);
+      glints.push({
+        x: Math.random() * (W + 160),
+        y: waterY + 8 + d * wDepth * 0.82,
+        d,
+        len: rand(18, 34 + d * 92),
+        w: rand(0.7, 1.5 + d * 1.6),
+        a: rand(0.07, 0.15 + d * 0.22),
+        vx: rand(3, 16) * (Math.random() < 0.5 ? 1 : -1),
+        f: rand(0.5, 2.4),
+        p: Math.random() * TAU,
+        hue: Math.random() < 0.55 ? rand(322, 348) : rand(196, 226)
+      });
+    }
+  }
+
+  /* 倒映的星点：只取较亮的一部分（全部镜像会太吵），
+     与天上的星严格 1:1 对应 —— 每颗都有、且只有一颗。 */
+  function buildWaterStars() {
+    waterStars = [];
+    for (const s of stars) {
+      if (s.y > waterY - 4) continue;
+      if (s.r < 0.72 && Math.random() > 0.35) continue;
+      waterStars.push(s);
+      if (waterStars.length >= 320) break;
+    }
+  }
+
+  function buildDust() {
+    dust = [];
+    const n = Math.round(Math.min(70, Math.max(18, (W * H) / 34000)));
+    for (let i = 0; i < n; i++) {
+      dust.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: rand(12, 46),
+        a: rand(0.012, 0.045),
+        vx: rand(-0.06, 0.06),
+        vy: rand(-0.05, 0.05),
+        phase: Math.random() * TAU
+      });
+    }
+  }
+
+  function buildHeart() {
+    const S = Math.min(W, H);
+
+    /* ---- 内部粒子：负责心的体积与呼吸感 ---- */
+    fill = [];
+    const count = Math.round(Math.min(900, Math.max(380, (S * S) / 1050)));
+    for (let i = 0; i < count; i++) {
+      const t = tAtArea(Math.random());
+      const r = Math.pow(Math.random(), 0.7) * 0.94;
+      const sp = heartPoint(t);
+      fill.push({
+        t,
+        r,
+        // 初始位置从远处飞入，形成聚拢成心的入场感
+        x: cx + sp.x * r * scale * rand(3.2, 5.5),
+        y: cy + sp.y * r * scale * rand(3.2, 5.5),
+        vx: 0,
+        vy: 0,
+        size: rand(5, 12) * (S / 900 + 0.55),
+        alpha: rand(0.17, 0.54),
+        tw: Math.random() * TAU,
+        tws: rand(0.6, 2.2),
+        sprite: HEART_SPRITES[randInt(HEART_SPRITES.length)],
+        // 倒影用的配色（更冷更暗），与本体粒子一一绑定
+        wsprite: WATER_SPRITES[randInt(WATER_SPRITES.length)]
+      });
+    }
+
+    /* ---- 边缘：丝带里不断流动、闪烁的光屑（三维螺旋） ----
+       u 是「弧长归一化位置」(0–1)，每颗光屑沿轮廓推进；
+       同时绕轮廓这根「圆管」旋转：法向偏移 = R·cosθ，深度 z = R·sinθ。
+       θ 随时间滚动、且沿拖尾方向继续推进 spin 圈 —— 拖尾不再是平面上的一条线，
+       而是绕管盘旋的一段螺旋；头 / 中 / 尾三段端点在 updateHeart 里只解算一次，
+       本体与倒影共用，映射关系不会漂移。 */
+    meteors = [];
+    const per = LUT_TOTAL * scale;                       // 轮廓周长（像素）
+    const n = Math.round(Math.min(170, Math.max(70, per / 20)));
+    for (let i = 0; i < n; i++) {
+      const dir = Math.random() < 0.56 ? 1 : -1;
+      meteors.push({
+        u: i / n + rand(-0.006, 0.006),
+        dir,
+        sp: dir * rand(0.070, 0.265),                    // 每秒推进的弧长比例
+        tail: rand(0.096, 0.264),                        // 拖尾长度（弧长比例，三倍）
+        len: rand(0.70, 1.10),                           // 视觉长度倍率
+        tubeR: rand(0.45, 0.85),                         // 在管子的哪一层
+        theta0: Math.random() * TAU,                     // 绕管初始相位
+        rotSpeed: rand(0.20, 0.75) * (Math.random() < 0.5 ? 1 : -1),  // 绕管滚动速度
+        /* 拖尾这么长，绕管圈数必须小：半圈上下刚好「绕出来再收回去」，
+           给到一圈以上，长拖尾就会垂直于轮廓扎出去、横穿心内 */
+        spin: rand(0.22, 0.55) * (Math.random() < 0.5 ? 1 : -1),
+        size: rand(0.50, 1.35),
+        baseA: rand(0.56, 1.0),
+        a: 0,
+        flash: 0,
+        /* 拖尾这么长，三个点（头/中/尾）画直线会切出心形 ——
+           改成沿拖尾取 5 个点，各自解算螺旋位置，拖尾才能贴着轮廓弯曲 */
+        px: new Float32Array(5),                         // 本帧拖尾 5 个端点（0=头 4=尾）
+        py: new Float32Array(5),
+        pz: new Float32Array(5),                         // 各点深度（±1）
+        fu: Math.random() * TAU,                         // 闪烁相位
+        fs: rand(2.2, 8.4),                              // 闪烁频率
+        streak: METEOR_STREAKS[METEOR_WEIGHT[randInt(METEOR_WEIGHT.length)]]
+      });
+    }
+
+    /* ---- 嵌在丝带上的十字星芒 ----
+       参考图里丝带上每隔一段就有一颗炸开的亮星。位置固定在轮廓上，
+       只让亮度脉动，所以看起来是「镶在丝带里的宝石」，不是飘动的粒子。 */
+    bandStars = [];
+    const bn = Math.round(Math.min(22, Math.max(12, per / 260)));
+    for (let i = 0; i < bn; i++) {
+      bandStars.push({
+        u: wrap01(i / bn + rand(-0.022, 0.022)),
+        off: rand(-0.70, 0.70),
+        size: rand(0.85, 2.30),
+        baseA: rand(0.45, 1.0),
+        ph: Math.random() * TAU,
+        sp: rand(0.65, 2.30),
+        fl: FLARES[randInt(FLARES.length)],
+        x: 0, y: 0, pulse: 0
+      });
+    }
+  }
+
+  /* =====================================================================
+     爱心边界的底衬离屏图层
+     ---------------------------------------------------------------------
+     这里只放「不闪」的东西：
+       ① 极淡的管状底光 —— 让边界在任何瞬间都有个可辨认的轮廓，
+                            不能给亮，一给亮就把光屑之间的空隙填死了
+       ② 碎钻           —— 撒在空隙里的细小亮点
+       ③ 珠体           —— 带光晕与细环的玻璃小球
+       ④ 轨道环         —— 两条穿过爱心的细椭圆，呼应参考图的行星轨道
+     真正的主角「光屑」是会流动、会明灭的，放不进静态图层，见 buildHeart。
+     几何全静止，只在缩放变化时重建一次。
+     ===================================================================== */
+  function buildHeartBand() {
+    // 丝带图层每帧要被合成两次（本体 + 倒影），分辨率给到 1.4 就够，
+    // 再高只是白白拖慢合成，反正是柔光。
+    const bd = Math.min(DPR, 1.4);
+    let bs = scale * bd;
+    // 离屏图层别超过 2048，否则显存与合成开销都不划算
+    const fit = Math.min(1, 2048 / Math.max(BAND_W * bs, BAND_H * bs));
+    bs *= fit;
+    if (bs < 1) bs = 1;
+    bandBS = bs;
+
+    bandCv = document.createElement('canvas');
+    bandCv.width  = Math.max(8, Math.round(BAND_W * bs));
+    bandCv.height = Math.max(8, Math.round(BAND_H * bs));
+    const g = bandCv.getContext('2d');
+    const X = x => (x - BAND_X0) * bs;
+    const Y = y => (y - BAND_Y0) * bs;
+
+    /* 轮廓采样：SAMP + 1 个点，末点等于首点。
+       下标即弧长参数 u = i / SAMP，所以只要丝线的频率取整数，
+       绕一圈回到起点时偏移量必然闭合，不会在接口处断开一道缝。 */
+    const SAMP = 300;
+    const PX = new Float64Array(SAMP + 1);
+    const PY = new Float64Array(SAMP + 1);
+    const NX = new Float64Array(SAMP + 1);
+    const NY = new Float64Array(SAMP + 1);
+    for (let i = 0; i <= SAMP; i++) {
+      const u = i / SAMP;
+      const p = heartPoint(tAtArc(u === 1 ? 1 : u));
+      const a = heartPoint(tAtArc(wrap01(u - 0.004)));
+      const b = heartPoint(tAtArc(wrap01(u + 0.004)));
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const L = Math.hypot(dx, dy) || 1;
+      PX[i] = p.x; PY[i] = p.y;
+      NX[i] = -dy / L; NY[i] = dx / L;
+    }
+
+    g.globalCompositeOperation = 'lighter';
+    g.lineJoin = 'round';
+    g.lineCap = 'round';
+
+    /* ① 管状外辉光：
+       层数少、每层 alpha 低 —— 这些描边是叠加上色的，一旦每层给到 0.3
+       就会瞬间叠成一根白烟管，丝线的纹理全被吃掉。这里最内层也只给 0.077，
+       累计起来刚好是「发光」而不是「过曝」。 */
+    const outline = new Path2D();
+    for (let i = 0; i <= SAMP; i++) {
+      const px = X(PX[i]), py = Y(PY[i]);
+      if (i === 0) outline.moveTo(px, py); else outline.lineTo(px, py);
+    }
+    /* 只留一层很淡的底光：它的作用是让边界在任何时刻都有一个可辨认的
+       轮廓，而不是让整条带子发光。给亮一点就会把光丝之间的空隙填死。 */
+    for (let i = 0; i < 6; i++) {
+      const k = i / 5;                                    // 0 最外 → 1 最内
+      g.lineWidth = BAND_HALF * 2.5 * (1 - 0.76 * k) * bs;
+      g.strokeStyle = 'hsla(' + (314 + i * 4) + ',100%,' +
+                      (44 + i * 3) + '%,' + (0.007 + 0.045 * Math.pow(k, 2.4)) + ')';
+      g.stroke(outline);
+    }
+    // 极淡的一道脊：光丝删掉后，边界的持续可读性就靠它与光屑 ——
+    // 比原来亮一档，但仍远低于会糊住空隙的阈值
+    g.lineWidth = BAND_HALF * 0.24 * bs;
+    g.strokeStyle = 'hsla(326,100%,80%,0.085)';
+    g.stroke(outline);
+
+    /* ② 缠绕丝线 → 已移除（用户要求只保留光屑）。
+       这里只留下少量碎钻、珠体和星芒，当作光屑之间飘着的杂质。 */
+
+    /* ③ 碎钻：数量刻意留稀，它们只是空隙里的点缀 */
+    for (let i = 0; i < 340; i++) {
+      const j = randInt(SAMP + 1);
+      const t = Math.random() * 2 - 1;
+      const o = BAND_HALF * Math.sign(t) * Math.pow(Math.abs(t), 0.7);
+      const px = X(PX[j] + NX[j] * o), py = Y(PY[j] + NY[j] * o);
+      const cold = Math.random() < 0.22;
+      g.fillStyle = 'hsla(' + (cold ? rand(188, 210) : rand(298, 356)) + ',100%,' +
+                    rand(60, 84) + '%,' + rand(0.12, 0.46) + ')';
+      g.beginPath();
+      g.arc(px, py, rand(0.30, 1.25) * bs * 0.088, 0, TAU);
+      g.fill();
+    }
+
+    /* ④ 珠体：小玻璃球，靠一圈紧贴的光晕才有"珠子"的体积感，
+       半径给大了就会变成一团糊在丝带上的白雾 */
+    const orbs = Math.round(Math.min(11, Math.max(5, scale / 7)));
+    for (let i = 0; i < orbs; i++) {
+      const j = randInt(SAMP + 1);
+      const side = Math.random() < 0.5 ? -1 : 1;
+      const o = side * BAND_HALF * rand(0.10, 0.86);
+      const px = X(PX[j] + NX[j] * o), py = Y(PY[j] + NY[j] * o);
+      const R = rand(0.17, 0.38) * bs;
+      const cold = Math.random() < 0.55;
+      const hue = cold ? rand(190, 216) : rand(302, 344);
+
+      const halo = g.createRadialGradient(px, py, 0, px, py, R * 3.2);
+      halo.addColorStop(0.00, 'hsla(' + hue + ',100%,78%,0.30)');
+      halo.addColorStop(0.40, 'hsla(' + hue + ',100%,62%,0.085)');
+      halo.addColorStop(1.00, 'hsla(' + hue + ',100%,58%,0)');
+      g.fillStyle = halo;
+      g.beginPath(); g.arc(px, py, R * 3.2, 0, TAU); g.fill();
+
+      const body = g.createRadialGradient(px - R * 0.32, py - R * 0.36, R * 0.04, px, py, R);
+      body.addColorStop(0.00, 'rgba(255,255,255,0.88)');
+      body.addColorStop(0.34, 'hsla(' + hue + ',100%,80%,0.52)');
+      body.addColorStop(0.78, 'hsla(' + hue + ',100%,56%,0.22)');
+      body.addColorStop(1.00, 'hsla(' + hue + ',100%,50%,0.03)');
+      g.fillStyle = body;
+      g.beginPath(); g.arc(px, py, R, 0, TAU); g.fill();
+
+      if (Math.random() < 0.45) {                        // 几颗带细环的小行星
+        g.strokeStyle = 'hsla(' + hue + ',100%,88%,0.26)';
+        g.lineWidth = Math.max(0.5, R * 0.12);
+        g.beginPath();
+        g.ellipse(px, py, R * 1.95, R * 0.48, rand(-0.55, 0.55), 0, TAU);
+        g.stroke();
+      }
+    }
+
+    /* ⑤ 轨道环 */
+    for (let i = 0; i < 2; i++) {
+      g.strokeStyle = 'hsla(' + (i === 1 ? 196 : 314) + ',100%,' + (74 - i * 8) + '%,' +
+                      (0.072 - i * 0.026) + ')';
+      g.lineWidth = Math.max(0.6, bs * 0.024);
+      g.beginPath();
+      g.ellipse(X(0), Y(1.8), rand(16.5, 21.0) * bs, rand(4.4, 7.2) * bs, rand(-0.26, 0.26), 0, TAU);
+      g.stroke();
+    }
+
+    g.globalCompositeOperation = 'source-over';
+  }
+
+  /* =====================================================================
+     水面系统
+     ===================================================================== */
+
+  let gBeat = 1, gCos = 1, gSin = 0;      // 本帧的心跳与摆动，本体与倒影共用
+
+  const _h = { x: 0, y: 0 }, _t = { x: 0, y: 0 };
+  const _m = { x: 0, y: 0, d: 0 };
+  const _rx5 = new Float64Array(5), _ry5 = new Float64Array(5);   // 光屑倒影的 5 个镜像端点
+
+  /* 心形单位坐标 → 屏幕坐标（含心跳缩放与整体摆动） */
+  function heartToScreen(hx, hy, out) {
+    const k = scale * gBeat;
+    const x = hx * k, y = hy * k;
+    out.x = cx + x * gCos - y * gSin;
+    out.y = cy + x * gSin + y * gCos;
+    return out;
+  }
+
+  /* ---------------- 倒影映射（严格双射） ----------------
+     本体上任意一点 (x, y) 的倒影都有且只有一点，公式可逆：
+       ① 关于水线镜像           y' = waterY + (waterY − y)
+       ② 按视角做透视压缩       y' = waterY + (waterY − y) × squash
+       ③ 沿水平方向叠加波纹位移 x' = x + A(y') · sin(k·y' − ω·t + x·c)
+     点集不增不减、对应关系不串位，所以「水面上的爱心」与「倒影里的爱心」
+     是严格的一一映射：流星的每一段拖尾、内部粒子的每一颗，水下都有唯一对应。 */
+  function mirrorPoint(x, y, out) {
+    const ry = waterY + (waterY - y) * squash;
+    const d = Math.max(0, (ry - waterY) / Math.max(1, wDepth));   // 0=刚入水 1=屏幕底
+    const amp = 1.0 + 13 * d * d;                                 // 越深，波幅越大
+    out.y = ry;
+    out.x = x + amp * Math.sin(d * 7.4 - time * 1.15 + x * 0.0125);
+    out.d = d;
+    return out;
+  }
+
+  /* 拖尾绘制：贴图的亮头对齐头部端点，尾部沿弧线向后拉伸。
+     整条拖尾由「头→中」+「中→尾」两段拼成，各取贴图的一半，
+     这样长拖尾也能贴着心形曲线走，不会切出一道直线折角。 */
+  function drawHalf(spr, sx0, sx1, x0, y0, x1, y1, w, a) {
+    const dx = x1 - x0, dy = y1 - y0;
+    const len = Math.hypot(dx, dy);
+    if (len < 0.8 || a <= 0.004) return;
+    const SW = spr.width;
+    ctx.save();
+    ctx.translate(x1, y1);
+    ctx.rotate(Math.atan2(dy, dx));
+    ctx.globalAlpha = a > 1 ? 1 : a;
+    ctx.drawImage(spr, sx0 * SW, 0, (sx1 - sx0) * SW, spr.height, -len, -w / 2, len, w);
+    ctx.restore();
+  }
+
+  function drawStreak(spr, hx, hy, mx, my, tx, ty, w, a) {
+    drawHalf(spr, 0.5, 1.0, mx, my, hx, hy, w, a);                        // 含亮头的前半段
+    drawHalf(spr, 0.0, 0.5, tx, ty, mx, my, w * 0.74, a * 0.92);          // 更细更淡的后半段
+  }
+
+  /* 多段拖尾：5 个端点分 4 段，各取贴图的 1/4。
+     每段按自己的深度（z）调制粗细与亮度 —— 同一根拖尾绕到背面的一段
+     自动变细变暗，不需要额外排序；尾部再叠加逐渐收细。 */
+  function drawMeteorPts(spr, xs, ys, zs, w, a) {
+    const SEG = xs.length - 1;
+    for (let k = 0; k < SEG; k++) {
+      const z = (zs[k] + zs[k + 1]) * 0.5;
+      const zf = 0.5 + 0.5 * z;
+      const wK = (0.70 + 0.52 * zf) * (1 - 0.24 * k / (SEG - 1));
+      const aK = (0.34 + 0.66 * zf) * (1 - 0.07 * k);
+      const sx1 = 1 - k / SEG, sx0 = 1 - (k + 1) / SEG;
+      drawHalf(spr, sx0, sx1, xs[k + 1], ys[k + 1], xs[k], ys[k], w * wK, a * aK);
+    }
+  }
+
+  /* ---------------- 水体 ----------------
+     水体是半透明的，天上较亮的星点会透下来，形成「倒映的星河」，
+     再叠上逐颗严格镜像的星点，星空装饰一直延伸到水下。 */
+  function drawWaterBase() {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = wGrad;
+    ctx.fillRect(0, waterY, W, H - waterY);
+
+    ctx.globalCompositeOperation = 'lighter';
+    const wSize = scale * 0.5;
+    for (const s of waterStars) {
+      const ry = waterY + (waterY - s.y) * squash;
+      if (ry >= H - 1) continue;
+      const d = (ry - waterY) / Math.max(1, wDepth);
+      const rx = s.x + (0.8 + 9 * d * d) * Math.sin(d * 6.6 - time * 0.95 + s.x * 0.012);
+      const tw = 0.30 + 0.70 * Math.abs(Math.sin(time * s.speed + s.phase));
+      const a = s.base * 0.40 * tw * (1 - d * 0.55);
+      if (a <= 0.01) continue;
+      const dd = s.r * 6.4 * (1 + d * 0.5) * (wSize / 6);
+      ctx.globalAlpha = Math.min(1, a);
+      ctx.drawImage(s.sprite, rx - dd / 2, ry - dd / 2, dd, dd);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  /* ---------------- 水下层：爱心倒影 ---------------- */
+  function drawHeartReflection() {
+    if (squash <= 0.02) return;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, waterY, W, H - waterY + 1);
+    ctx.clip();
+    ctx.globalCompositeOperation = 'lighter';
+
+    const wStreak = scale * 0.5;
+
+    /* ① 丝带的倒影。
+       用的就是同一张离屏图层、同一套心形变换，只多叠了一层 y 镜像，
+       再按横条逐段做水波横向错位 —— 所以水下这片丝带与水上那片
+       本质是同一批像素，严格一一对应，差的只是水波的错位量。 */
+    if (bandCv) {
+      const STEPS = 26;
+      const dxFull = BAND_W * scale;
+      const dyFull = BAND_H * scale;
+      const baseX = BAND_X0 * scale, baseY = BAND_Y0 * scale;
+      const srcW = bandCv.width;
+      const srcH = bandCv.height / STEPS;
+
+      ctx.save();
+      ctx.translate(0, waterY);
+      ctx.scale(1, -squash);
+      ctx.translate(0, -waterY);
+      ctx.translate(cx, cy);
+      ctx.rotate(Math.atan2(gSin, gCos));
+      ctx.scale(gBeat, gBeat);
+
+      for (let i = 0; i < STEPS; i++) {
+        const ly0 = baseY + dyFull * i / STEPS;
+        const ly1 = baseY + dyFull * (i + 1) / STEPS;
+        // 这一横条镜像后落到屏幕的哪个深度 → 决定波幅与衰减
+        const sy = cy + (ly0 + ly1) * 0.5 * gCos;
+        const ry = waterY + (waterY - sy) * squash;
+        const d = Math.max(0, Math.min(1, (ry - waterY) / Math.max(1, wDepth)));
+        // 与 mirrorPoint 同一条波：越深波幅越大
+        const ripple = (0.9 + 11 * d * d) *
+                       Math.sin(d * 6.8 - time * 1.05 + cx * 0.0125);
+        ctx.save();
+        ctx.translate(ripple, 0);
+        ctx.globalAlpha = 0.24 * (1 - d * 0.50);
+        ctx.drawImage(bandCv, 0, srcH * i, srcW, srcH,
+                      baseX, ly0, dxFull, ly1 - ly0 + 0.75);
+        ctx.restore();
+      }
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
+
+    // ② 内部粒子的倒影：闪烁直接复用本体这一帧的 twNow，
+    //    倒影与本体同频率同相位地呼吸，只是更暗、越深越淡
+    for (const p of fill) {
+      mirrorPoint(p.x, p.y, _m);
+      if (_m.y >= H) continue;
+      const fade = 0.14 + 0.74 * Math.pow(1 - Math.min(1, _m.d), 0.7);
+      const a = p.alpha * p.twNow * fade * RFL;
+      if (a <= 0.008) continue;
+      const size = p.size * (1 + _m.d * 0.8) * 0.94;
+      ctx.globalAlpha = Math.min(1, a);
+      ctx.drawImage(p.wsprite, _m.x - size / 2, _m.y - size / 2, size, size);
+    }
+
+    // ③ 丝带光屑的倒影：拖尾 5 个端点逐点镜像（深度 z 直接复用本体的，
+    //    水下那几段与水上那几段必然一一对应）
+    for (const m of meteors) {
+      if (m.a <= 0.008) continue;
+      let dMid = 0, off = true;
+      for (let k = 0; k < 5; k++) {
+        mirrorPoint(m.px[k], m.py[k], _m);
+        _rx5[k] = _m.x; _ry5[k] = _m.y;
+        if (k === 2) dMid = _m.d;
+        if (_m.y < H) off = false;
+      }
+      if (off) continue;
+      const fade = 0.18 + 0.74 * Math.pow(1 - Math.min(1, dMid), 0.7);
+      const a = m.a * fade * RFL;
+      drawMeteorPts(m.streak, _rx5, _ry5, m.pz, m.size * wStreak, a);
+
+      // 水下亮核（与本体头部一一对应）
+      const zh = 0.5 + 0.5 * m.pz[0];
+      const hs = m.size * scale * 0.24 * (0.70 + 0.52 * zh);
+      ctx.globalAlpha = Math.min(1, a * 0.75 * (0.34 + 0.66 * zh));
+      ctx.drawImage(WATER_CORE, _rx5[0] - hs, _ry5[0] - hs, hs * 2, hs * 2);
+    }
+    ctx.globalAlpha = 1;
+
+    // ④ 丝带上星芒的倒影：同样是逐点镜像，一颗不多一颗不少
+    for (const b of bandStars) {
+      mirrorPoint(b.x, b.y, _m);
+      if (_m.y >= H) continue;
+      const s = b.pulse;
+      const fade = 0.16 + 0.76 * Math.pow(1 - Math.min(1, _m.d), 0.7);
+      const a = b.baseA * (0.20 + 0.80 * s * s) * fade * 0.50;
+      if (a <= 0.01) continue;
+      const sz = b.size * scale * 1.62 * (0.80 + 0.46 * s) * (1 + _m.d * 0.5);
+      ctx.globalAlpha = Math.min(1, a);
+      ctx.drawImage(b.fl, _m.x - sz / 2, _m.y - sz / 2, sz, sz);
+    }
+
+    // ⑤ 心尖光爆的倒影
+    heartToScreen(0, 17, _h);
+    mirrorPoint(_h.x, _h.y, _m);
+    if (_m.y < H) {
+      const tb = 0.86 + 0.14 * Math.sin(time * 2.4);
+      const tr = scale * 2.9 * tb * 1.5;
+      ctx.globalAlpha = 0.15 * tb;
+      ctx.drawImage(WATER_CORE, _m.x - tr, _m.y - tr, tr * 2, tr * 2);
+    }
+
+    ctx.globalAlpha = 1;
+    ctx.restore();
+  }
+
+  /* ---------------- 水面表层：波光 / 亮边 / 涟漪 ---------------- */
+  function drawWaterSurface() {
+    ctx.globalCompositeOperation = 'lighter';
+
+    // 横向碎光
+    ctx.lineCap = 'round';
+    const span = W + 220;
+    for (const g of glints) {
+      let x = g.x + time * g.vx;
+      x = ((x % span) + span) % span - 110;
+      const a = g.a * (0.28 + 0.72 * Math.abs(Math.sin(time * g.f + g.p)));
+      if (a < 0.006) continue;
+      const y = g.y + Math.sin(time * 0.7 + g.p) * (1.2 + g.d * 3.4);
+      ctx.strokeStyle = 'hsla(' + g.hue + ',92%,' + (80 - g.d * 10) + '%,' + a + ')';
+      ctx.lineWidth = g.w;
+      ctx.beginPath();
+      ctx.moveTo(x - g.len / 2, y);
+      ctx.lineTo(x + g.len / 2, y);
+      ctx.stroke();
+    }
+
+    // 水线亮边（会呼吸）
+    ctx.globalAlpha = 0.58 + 0.42 * (0.5 + 0.5 * Math.sin(time * 1.05));
+    ctx.fillStyle = wLineGrad;
+    ctx.fillRect(0, waterY - 16, W, 44);
+    ctx.globalAlpha = 1;
+
+    /* 心尖正下方的光柱：参考图里心尖像一枚灯，把一条亮柱打进水里。
+       宽度随深度缓慢摇曳，避免看起来像一块方正的色块。 */
+    const S = Math.min(W, H);
+    const colH = wDepth * 0.90;
+    const colW = scale * 3.6;
+    const sway = 1 + 0.22 * Math.sin(time * 1.35);
+    ctx.save();
+    ctx.translate(cx, waterY);
+    ctx.scale(sway, 1);
+    const cg = ctx.createLinearGradient(0, 0, 0, colH);
+    cg.addColorStop(0.00, 'rgba(255,226,244,0.12)');
+    cg.addColorStop(0.18, 'rgba(255,170,215,0.050)');
+    cg.addColorStop(0.52, 'rgba(180,150,255,0.020)');
+    cg.addColorStop(1.00, 'rgba(120,110,255,0)');
+    ctx.fillStyle = cg;
+    ctx.fillRect(-colW / 2, 0, colW, colH);
+    ctx.restore();
+
+    // 心尖触水处的同心涟漪
+    for (let i = 0; i < 4; i++) {
+      const ph = (time * 0.34 + i * 0.25) % 1;
+      const a = (1 - ph) * (1 - ph) * 0.34;
+      if (a < 0.004) continue;
+      const rr = 0.07 + ph * 0.92;
+      ctx.strokeStyle = 'rgba(214,196,255,' + a + ')';
+      ctx.lineWidth = 1.1 + (1 - ph) * 1.5;
+      ctx.beginPath();
+      ctx.ellipse(cx, waterY + 4, S * 0.56 * rr, S * 0.10 * rr, 0, 0, TAU);
+      ctx.stroke();
+    }
+
+    // 触水点辉光
+    const pr = S * (0.040 + 0.016 * Math.sin(time * 1.05));
+    ctx.globalAlpha = 0.16;
+    ctx.drawImage(WATER_CORE, cx - pr, waterY - pr * 0.82, pr * 2, pr * 1.64);
+    ctx.globalAlpha = 1;
+  }
+
+  /* ---------------- 流星（天顶划过的） ---------------- */
+  function spawnShooter() {
+    const fromLeft = Math.random() < 0.5;
+    const angle = fromLeft ? rand(0.20, 0.52) : Math.PI - rand(0.20, 0.52);
+    const speed = rand(9, 17);
+    shooters.push({
+      x: fromLeft ? rand(-W * 0.15, W * 0.55) : rand(W * 0.45, W * 1.15),
+      y: rand(-H * 0.12, H * 0.45),
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      len: rand(90, 240),
+      life: 1,
+      decay: rand(0.0045, 0.0092),
+      hue: Math.random() < 0.5 ? 200 : 330
+    });
+  }
+
+  /* ---------------- 主循环 ---------------- */
+  function frame(ts) {
+    rafId = requestAnimationFrame(frame);
+    const dt = Math.min(0.05, (ts - lastTs) / 1000 || 0.016);
+    lastTs = ts;
+    time += dt;
+
+    // 指针速度（用于拖尾辉光）
+    pointer.vx = pointer.x - pointer.px;
+    pointer.vy = pointer.y - pointer.py;
+    pointer.px = pointer.x;
+    pointer.py = pointer.y;
+    pointer.power += ((pointer.active ? 1 : 0) - pointer.power) * Math.min(1, dt * 6);
+
+    updateHeart(dt);          // 物理与光屑先推进一次（本体与倒影共用同一份状态）
+
+    drawSky(dt);              // 天空：星云 / 星点 / 星芒 / 天顶流星
+    drawWaterBase();          // 水体底色 + 倒映的星
+    drawHeartReflection();    // 水下：爱心倒影（与本体严格一一对应）
+    drawWaterSurface();       // 水面：波光 / 亮边 / 涟漪
+    drawHeartBody();          // 水上：爱心本体 + 边缘流动的流星
+    drawPointerGlow();
+
+    if (shooters.length < 4 && Math.random() < dt * 0.80) spawnShooter();
+  }
+
+  /* ---------- 背景：底色 → 星云 → 尘埃 → 星点 → 流星 ---------- */
+  function drawSky(dt) {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, W, H);
+
+    // 地平线蓝雾：压出一层大气，天空才有上深下亮的纵深
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.fillStyle = horizonGrad;
+    ctx.fillRect(0, H * 0.34, W, waterY - H * 0.34);
+
+    // 星云（带一点点联动视差）
+    const px = (pointer.active ? (pointer.x / W - 0.5) : 0);
+    const py = (pointer.active ? (pointer.y / H - 0.5) : 0);
+    const breathe = 0.92 + 0.08 * Math.sin(time * 0.28);
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalAlpha = 0.78 * breathe;
+    const over = 0.06;
+    ctx.drawImage(
+      nebula,
+      -W * over + px * -28 - 6,
+      -H * over + py * -22 - 6,
+      W * (1 + over * 2),
+      H * (1 + over * 2)
+    );
+    ctx.globalAlpha = 1;
+
+    // 尘埃光斑
+    for (const d of dust) {
+      d.x += d.vx; d.y += d.vy;
+      if (d.x < -d.r) d.x = W + d.r; else if (d.x > W + d.r) d.x = -d.r;
+      if (d.y < -d.r) d.y = H + d.r; else if (d.y > H + d.r) d.y = -d.r;
+      const a = d.a * (0.6 + 0.4 * Math.sin(time * 0.5 + d.phase));
+      ctx.globalAlpha = a;
+      ctx.drawImage(CORE_SPRITE, d.x - d.r, d.y - d.r, d.r * 2, d.r * 2);
+    }
+    ctx.globalAlpha = 1;
+
+    // 星点
+    for (const s of stars) {
+      // 缓慢漂移，越"近"的星星动得越快
+      s.y += s.drift * dt * 60 * 0.16;
+      s.x += s.drift * dt * 60 * 0.05;
+      if (s.y > H + 2) { s.y = -2; s.x = Math.random() * W; }
+      if (s.x > W + 2) { s.x = -2; }
+
+      const tw = 0.55 + 0.45 * Math.sin(time * s.speed + s.phase);
+      const a = s.base * tw;
+      if (a <= 0.012) continue;
+
+      const d = s.r * 8.6;
+      ctx.globalAlpha = a * 0.95;
+      ctx.drawImage(s.sprite, s.x - d / 2, s.y - d / 2, d, d);
+
+      // 亮星补一个实心核，避免大星看起来发虚
+      if (s.r > 1.0) {
+        ctx.globalAlpha = Math.min(1, a * 1.15);
+        ctx.fillStyle = 'rgba(255,255,255,0.95)';
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r * 0.42, 0, TAU);
+        ctx.fill();
+      }
+
+      // 少数亮星带十字星芒：星空靠它撑起层次
+      if (s.flare && a > 0.24) {
+        const fs = s.flareS * (Math.min(W, H) / 900 + 0.55) *
+                   (0.88 + 0.12 * Math.sin(time * s.speed * 1.7 + s.phase));
+        ctx.globalAlpha = Math.min(1, s.flareA * a * 1.9);
+        ctx.drawImage(s.flare, s.x - fs / 2, s.y - fs / 2, fs, fs);
+      }
+    }
+    ctx.globalAlpha = 1;
+
+    drawShooters(dt);
+  }
+
+  function drawShooters(dt) {
+    const f = dt * 60;
+    for (let i = shooters.length - 1; i >= 0; i--) {
+      const s = shooters[i];
+      s.x += s.vx * f;
+      s.y += s.vy * f;
+      s.life -= s.decay * f;
+
+      if (s.life <= 0 || s.x < -W * 0.5 || s.x > W * 1.5 || s.y > H * 1.3) {
+        shooters.splice(i, 1);
+        continue;
+      }
+
+      const n = Math.hypot(s.vx, s.vy) || 1;
+      const tx = s.x - (s.vx / n) * s.len;
+      const ty = s.y - (s.vy / n) * s.len;
+
+      const g = ctx.createLinearGradient(s.x, s.y, tx, ty);
+      const a = Math.min(1, s.life) * 0.9;
+      g.addColorStop(0, 'hsla(' + s.hue + ',100%,88%,' + a + ')');
+      g.addColorStop(0.25, 'hsla(' + s.hue + ',100%,74%,' + (a * 0.34) + ')');
+      g.addColorStop(1, 'hsla(' + s.hue + ',100%,70%,0)');
+
+      ctx.strokeStyle = g;
+      ctx.lineWidth = s.w;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.lineTo(tx, ty);
+      ctx.stroke();
+
+      // 头部亮核 + 一枚小星芒，长流星才有「砸下来」的力度
+      const hs = 12 + s.w * 8;
+      ctx.globalAlpha = a * 0.9;
+      ctx.drawImage(STAR_SPRITES[0], s.x - hs, s.y - hs, hs * 2, hs * 2);
+      if (s.len > 190) {
+        ctx.globalAlpha = a * 0.55;
+        const fz = hs * 5;
+        ctx.drawImage(FLARES[s.hue > 300 ? 2 : 0], s.x - fz / 2, s.y - fz / 2, fz, fz);
+      }
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  /* ---------- 爱心：状态推进（每帧只跑一次） ---------- */
+  function updateHeart(dt) {
+    gBeat = reduced ? 1.02 : heartBeat(time);
+    const sway = Math.sin(time * 0.42) * 0.028;
+    gCos = Math.cos(sway);
+    gSin = Math.sin(sway);
+
+    const f = dt * 60;
+    const R = 118, R2 = R * R;
+    const push = 5.4;
+
+    for (const p of fill) {
+      const bp = heartPoint(p.t);
+      const k = p.r * scale * gBeat;
+      const rx = bp.x * k, ry = bp.y * k;
+      const tx = cx + rx * gCos - ry * gSin;
+      const ty = cy + rx * gSin + ry * gCos;
+
+      p.vx += (tx - p.x) * 0.048;
+      p.vy += (ty - p.y) * 0.048;
+
+      // 光标推开粒子
+      if (pointer.active) {
+        const dx = p.x - pointer.x;
+        const dy = p.y - pointer.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < R2 && d2 > 0.01) {
+          const d = Math.sqrt(d2);
+          const force = 1 - d / R;
+          const fv = force * force * push;
+          p.vx += (dx / d) * fv;
+          p.vy += (dy / d) * fv;
+        }
+      }
+
+      p.vx *= 0.905;
+      p.vy *= 0.905;
+      p.x += p.vx * f;
+      p.y += p.vy * f;
+
+      /* 闪烁在这一帧只算一次，本体与倒影共用 ——
+         之前倒影另起了一个固定频率的时间项，水面上的爱心和它的影子
+         呼吸频率就对不上；现在倒影直接读 p.twNow，节奏必然一致。 */
+      p.twNow = 0.68 + 0.32 * Math.sin(time * p.tws + p.tw);
+    }
+
+    /* 丝带光屑：沿轮廓匀速流动 + 持续闪烁 + 偶发爆闪，
+       同时绕轮廓这根「圆管」旋转 —— θ 随时间滚动，且沿拖尾方向继续
+       推进 spin 圈，拖尾于是绕管盘旋；尾部逐渐收回中线。
+       头 / 中 / 尾三段端点在本帧只解算一次，本体与倒影直接复用，
+       于是水下那一条与水上那一条必然落在同一对端点上，映射不会漂移。 */
+    for (const m of meteors) {
+      m.u += m.sp * dt;
+      if (m.u >= 1) m.u -= 1;
+      else if (m.u < 0) m.u += 1;
+
+      m.flash *= Math.pow(0.02, dt);
+      if (Math.random() < dt * 0.05) m.flash = rand(0.5, 1.1);
+
+      const fl = 0.5 + 0.5 * Math.sin(time * m.fs + m.fu);
+      m.a = m.baseA * (0.36 + 0.64 * fl * fl) * (1 + m.flash * 1.5);
+
+      const span = m.tail * m.len * m.dir;
+
+      /* 三维螺旋：法向偏移 = R·cosθ，深度 z = R·sinθ。
+         θ 随时间滚动（rotSpeed），并沿拖尾推进 spin 圈。
+         长拖尾时代半径收紧到 1.1 倍：再大拖尾就甩离轮廓了。
+         拖尾上取 5 个点逐点解算 —— 直线弦会切出心形，贴着轮廓走才不会。 */
+      const R = BAND_HALF * m.tubeR * 1.1;
+      const th0 = m.theta0 + m.rotSpeed * time;
+      for (let k = 0; k < 5; k++) {
+        const f = k / 4;                                 // 0 头 … 1 尾
+        const uk = wrap01(m.u - span * f);
+        const p = heartPoint(tAtArc(uk));
+        normalAt(uk, _nrm);
+        const th = th0 + m.spin * TAU * f;
+        const co = Math.cos(th), si = Math.sin(th);
+        const taper = 1 - 0.54 * f;                      // 尾部逐渐收回中线
+        const o = R * co * taper;
+        heartToScreen(p.x + _nrm.x * o, p.y + _nrm.y * o - si * R * 0.20 * taper, _h);
+        m.px[k] = _h.x; m.py[k] = _h.y; m.pz[k] = si;
+      }
+    }
+
+    /* 丝带上的星芒：位置不动，只让亮度呼吸，偶尔来一次爆闪 */
+    for (const b of bandStars) {
+      const p = heartPoint(tAtArc(b.u));
+      normalAt(b.u, _nrm);
+      const o = b.off * BAND_HALF * 0.9;
+      heartToScreen(p.x + _nrm.x * o, p.y + _nrm.y * o, _h);
+      b.x = _h.x; b.y = _h.y;
+      b.pulse = 0.5 + 0.5 * Math.sin(time * b.sp + b.ph);
+    }
+  }
+
+  /* ---------- 爱心：本体绘制（水线以上） ---------- */
+  function drawHeartBody() {
+    const S = Math.min(W, H);
+
+    ctx.globalCompositeOperation = 'lighter';
+
+    // 核心辉光：随心跳涨缩。中心压暗一档，给中间的名字留出对比度
+    const glowR = S * 0.38;
+    ctx.globalAlpha = Math.min(0.40, 0.18 + 0.16 * ((gBeat - 1) / 0.082));
+    ctx.drawImage(CORE_SPRITE, cx - glowR, cy - glowR * 0.92, glowR * 2, glowR * 1.84);
+    ctx.globalAlpha = 1;
+
+    // 内部粒子
+    for (const p of fill) {
+      const tw = p.twNow;
+      const speed = Math.min(1, Math.hypot(p.vx, p.vy) * 0.16);
+      const a = p.alpha * tw;
+      if (a <= 0.01) continue;
+
+      const size = p.size * (1 + speed * 0.55);
+      ctx.globalAlpha = Math.min(1, a);
+      ctx.drawImage(p.sprite, p.x - size / 2, p.y - size / 2, size, size);
+
+      // 高速粒子留一点亮点
+      if (speed > 0.35) {
+        ctx.globalAlpha = Math.min(1, a * speed);
+        ctx.fillStyle = 'rgba(255,240,248,0.9)';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, size * 0.075, 0, TAU);
+        ctx.fill();
+      }
+    }
+
+    /* 边界：整条星云丝带。
+       丝线 / 珠体 / 碎钻 / 轨道环都在离屏图层里，这里只叠一次心形变换。
+       图层刻意画在内部粒子之上，丝带的纹理才不会被粒子糊掉。 */
+    if (bandCv) {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(Math.atan2(gSin, gCos));
+      ctx.scale(gBeat, gBeat);
+      ctx.drawImage(bandCv, BAND_X0 * scale, BAND_Y0 * scale, BAND_W * scale, BAND_H * scale);
+      ctx.restore();
+    }
+
+    /* 边界光屑：沿轮廓流动的长拖尾流星，每颗都绕着轮廓这根「圆管」旋转。
+       分前后两批画：整体偏背面的先画、偏正面的后画；
+       每段拖尾内部再按自己的深度调粗细明暗 —— 同一根拖尾上也能看出
+       「这一段绕到前面来了、那一段绕到后面去了」。 */
+    const wStreak = scale * 0.5;
+    for (let pass = 0; pass < 2; pass++) {
+      for (const m of meteors) {
+        if (m.a <= 0.008) continue;
+        const front = (m.pz[0] + m.pz[1] + m.pz[2]) / 3;
+        if ((pass === 1) !== (front >= 0)) continue;
+        drawMeteorPts(m.streak, m.px, m.py, m.pz, m.size * wStreak, Math.min(1, m.a * 1.1));
+
+        // 头部亮核：深度越深越小越暗
+        const zh = 0.5 + 0.5 * m.pz[0];
+        const hs = m.size * scale * 0.26 * (0.70 + 0.52 * zh);
+        ctx.globalAlpha = Math.min(1, m.a * (0.34 + 0.66 * zh));
+        ctx.drawImage(CORE_SPRITE, m.px[0] - hs, m.py[0] - hs, hs * 2, hs * 2);
+      }
+    }
+    ctx.globalAlpha = 1;
+
+    // 丝带上镶着的星芒
+    for (const b of bandStars) {
+      const s = b.pulse;
+      const a = b.baseA * (0.20 + 0.80 * s * s);
+      const sz = b.size * scale * 1.62 * (0.80 + 0.46 * s);
+      ctx.globalAlpha = Math.min(1, a);
+      ctx.drawImage(b.fl, b.x - sz / 2, b.y - sz / 2, sz, sz);
+    }
+
+    /* 心尖的光爆：参考图里最亮的一点就在这里，而且正好压在水线上 */
+    heartToScreen(0, 17, _h);
+    const tb = 0.86 + 0.14 * Math.sin(time * 2.4) + 0.26 * ((gBeat - 1) / 0.082);
+    const tr = scale * 2.2 * tb;
+    ctx.globalAlpha = Math.min(1, 0.42 * tb);
+    ctx.drawImage(CORE_SPRITE, _h.x - tr, _h.y - tr, tr * 2, tr * 2);
+    ctx.globalAlpha = Math.min(1, 0.40 * tb);
+    const fs2 = tr * 4.0;
+    ctx.drawImage(FLARES[0], _h.x - fs2 / 2, _h.y - fs2 / 2, fs2, fs2);
+    ctx.globalAlpha = 1;
+  }
+
+  /* ---------- 光标辉光 ---------- */
+  function drawPointerGlow() {
+    if (pointer.power < 0.01) return;
+    const speed = Math.min(1, Math.hypot(pointer.vx, pointer.vy) * 0.05);
+    const r = 130 + speed * 90;
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalAlpha = 0.16 * pointer.power;
+    ctx.drawImage(CORE_SPRITE, pointer.x - r, pointer.y - r, r * 2, r * 2);
+    ctx.globalAlpha = 1;
+  }
+
+  /* ---------------- 交互 ---------------- */
+  function setPointer(x, y) {
+    if (!pointer.active) { pointer.px = x; pointer.py = y; }
+    pointer.x = x;
+    pointer.y = y;
+    pointer.active = true;
+  }
+
+  window.addEventListener('pointermove', e => setPointer(e.clientX, e.clientY), { passive: true });
+
+  window.addEventListener('pointerdown', e => {
+    setPointer(e.clientX, e.clientY);
+    // 冲击波：向外推开一圈粒子
+    const R = 190, R2 = R * R;
+    for (const p of fill) {
+      const dx = p.x - e.clientX;
+      const dy = p.y - e.clientY;
+      const d2 = dx * dx + dy * dy;
+      if (d2 < R2 && d2 > 0.01) {
+        const d = Math.sqrt(d2);
+        const fv = (1 - d / R) * 26;
+        p.vx += (dx / d) * fv;
+        p.vy += (dy / d) * fv;
+      }
+    }
+  }, { passive: true });
+
+  window.addEventListener('pointerleave', () => { pointer.active = false; }, { passive: true });
+  window.addEventListener('blur', () => { pointer.active = false; });
+
+  let resizeTimer = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 160);
+  }, { passive: true });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    } else if (!rafId) {
+      lastTs = performance.now();
+      rafId = requestAnimationFrame(frame);
+    }
+  });
+
+  /* ---------------- 启动 ---------------- */
+  resize();
+  lastTs = performance.now();
+  rafId = requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+/* -----------------------------------------------------------------------
+   花体字母兜底探测。
+   U+1D4D0–U+1D4FF（数学粗花体）在个别精简过的系统上会缺字，缺了就画成方块。
+   这里用 canvas 像素比对探一次：若 𝓛 渲染出来跟「必然缺字」的私用区字符
+   完全一致，就退回衬线斜体普通字母。
+   （ꨄ 不参与探测 —— 它由内嵌字体保证，任何系统都不会缺字。）
+------------------------------------------------------------------------ */
+(() => {
+  const row = document.querySelector('.names-row');
+  if (!row) return;
+
+  const SIZE = 26;
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = SIZE;
+
+  let ctx = null;
+  try { ctx = cv.getContext('2d', { willReadFrequently: true }); } catch (e) { return; }
+  if (!ctx) return;
+
+  const shot = (txt) => {
+    ctx.clearRect(0, 0, SIZE, SIZE);
+    ctx.fillStyle = '#000';
+    ctx.font = '20px "Cambria Math", "STIX Two Math", Georgia, serif';
+    ctx.textBaseline = 'top';
+    ctx.fillText(txt, 3, 3);
+    return Array.prototype.join.call(ctx.getImageData(0, 0, SIZE, SIZE).data, '');
+  };
+
+  let ok = true;
+  try {
+    const probe = shot('\u{1D4DB}');        // 𝓛
+    ok = probe !== shot('\u{E000}') &&      // 私用区 A：必然缺字
+         probe !== shot('\u{F0000}') &&     // 私用区 B：必然缺字
+         probe !== shot(' ');               // 什么都没画出来
+  } catch (e) { ok = true; }
+
+  if (ok) return;
+
+  document.documentElement.classList.add('no-script-glyph');
+  row.querySelectorAll('.n[data-plain]').forEach((el) => {
+    el.textContent = el.dataset.plain;
+  });
+})();
+</script>
+</body>
+</html>
